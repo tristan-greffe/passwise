@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24" xml:space="preserve">
+<desc>Created with Fabric.js 3.6.6</desc>
+<defs>
+</defs>
+<g transform="matrix(1 0 0 1 8.71 4.18)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(1,1,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-8.21, -3.68)" d="M 0.0244947 2.72656 C -0.0495021 4.36603 0.0468241 5.91195 0.27734 7.36307 C 2.20582 5.49452 8.10641 2.30678 16.281 4.50425 L 16.4227 0.595836 C 9.51152 -1.04477 3.00351 1.04612 0.0244947 2.72656 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 19.17 10.72)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(1,1,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-18.67, -10.21)" d="M 23.256 3.56917 C 22.1034 2.80391 20.933 2.18331 19.7599 1.68755 C 19.9781 4.86504 19.1471 12.3747 14.0771 16.9933 C 14.2275 17.1655 15.0914 17.7555 17.3441 18.7376 C 21.6672 14.0843 23.1211 7.28844 23.256 3.56917 Z" stroke-linecap="round" />
+</g>
+<g transform="matrix(1 0 0 1 8.92 15.43)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(1,1,35); fill-rule: nonzero; opacity: 1;"  transform=" translate(-8.42, -14.93)" d="M 11.5959 14.7147 C 14.9539 11.7849 15.7961 8.67633 15.7976 7.48827 C 8.00636 5.75493 2.71478 8.82719 1.04288 10.58 C 3.17513 17.2319 8.07238 21.3874 10.9245 22.8821 C 12.2655 22.4463 13.4708 21.8476 14.5525 21.1263 C 9.68833 18.6896 6.28825 13.931 5.19623 11.8562 L 8.13009 10.2743 C 9.09046 12.7604 10.8408 14.2704 11.5959 14.7147 Z" stroke-linecap="round" />
+</g>
+</svg>
