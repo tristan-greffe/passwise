@@ -1,0 +1,47 @@
+{
+  "name": "passwise",
+  "description": "Password Manager",
+  "version": "1.0.0",
+  "keywords": [
+    "Password",
+    "Manager"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tristan-greffe/passwise.git"
+  },
+  "author": {
+    "name": "Tristan Greffe contributors",
+    "url": "https://github.com/tristan-greffe"
+  },
+  "bugs": {
+    "url": "https://github.com/tristan-greffe/passwise/issues"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development PORT=8080 vite --port 8080",
+    "prod": "cd api && npm run prod",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.1.1",
+    "turbopack": "^0.0.1",
+    "vite": "^5.0.8"
+  }
+}
