@@ -1,3 +1,7 @@
 {
-  "CANCEL": "Annuler"
+  "CANCEL": "Annuler",
+  "home": {
+    "META_TITLE": "Gestionnaire de mots de passe sécurisé",
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !"
+  }
 }

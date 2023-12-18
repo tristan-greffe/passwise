@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next'
+import { Meta } from '../components'
 
 function Home () {
-  const { t } = useTranslation()
-
   return (
-    <div>{t('CANCEL')}</div>
+    <>
+      <Meta title="home.META_TITLE" description="home.META_DESCRIPTION" />
+    </>
   )
 }
 

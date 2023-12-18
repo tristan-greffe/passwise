@@ -1,3 +1,7 @@
 {
-  "CANCEL": "Cancel"
+  "CANCEL": "Cancel",
+  "home": {
+    "META_TITLE": "Secure password manager",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !"
+  }
 }
