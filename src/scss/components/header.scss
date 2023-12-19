@@ -1,0 +1,342 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate(0px, 0px);
+  @include desktop-screen {
+    background: transparent;
+    transition: background .4s ease;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+  > div:first-child {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    @include desktop-screen {
+      backdrop-filter: blur(4px);
+      background: hsla(0,0%,100%,.7);
+      transition: background .4s ease,opacity .4s ease;
+    }
+  }
+  > div:nth-child(2) {
+    column-gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    padding-left: 32px;
+    padding-right: 32px;
+    @include tablet-screen {
+      column-gap: 32px;
+      grid-template-columns: repeat(8,minmax(0,1fr));
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+    @include desktop-screen {
+      grid-template-columns: repeat(12,minmax(0,1fr));
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1312px;
+    }
+    > div:first-child {
+      grid-column-start: 1;
+      grid-column-end: 6;
+      display: flex;
+      justify-content: space-between;
+      @include tablet-screen {
+        grid-column-start: 1;
+        grid-column-end: 13;
+      }
+      @include desktop-screen {
+        grid-column-start: 1;
+        grid-column-end: 13;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      > div {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 16px;
+        @include desktop-screen {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}
+
+header .nav-mobile {
+  display: block;
+  @include desktop-screen {
+    display: none;
+  }
+  > div {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -10;
+    height: 100vh;
+    width: 100%;
+
+    background-color: rgb(255 255 255/1);
+    padding-bottom: 72px;
+    padding-top: 136px;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .3s;
+    overflow: auto;
+    &.clicked {
+      transform: translate(100%,0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    }
+    @include desktop-screen {
+      position: relative;
+      z-index: 30;
+      display: flex;
+      height: auto;
+      transform: translate(0,0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+    > div:nth-child(1) {
+      margin-bottom: 128px;
+      text-align: center;
+      > section {
+        margin-bottom: 48px;
+        font-family: Telegraf-SemiBold,sans-serif;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .96px;
+        line-height: 1rem;
+        text-transform: uppercase;
+      }
+    }
+    > div:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      > a {
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        background-color: rgb(1 1 35/1);
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-bottom: 24px;
+        padding-top: 24px;
+        text-transform: uppercase;
+        color: rgb(255 255 255/1);
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        font-family: Telegraf-SemiBold,sans-serif;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .96px;
+        line-height: 1rem;
+        text-transform: uppercase;
+        box-shadow: 9.30556px 18.0593px 50px rgba(139,145,190,.3);
+        > span {
+          position: relative;
+          margin-left: 16px;
+          transform: translate(0,-2px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+          > div {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            transform: translate(0,-1px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            overflow: hidden;
+            transition-duration: .15s;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+            transition-duration: .3s;
+          }
+          > svg {
+            transition-duration: .3s;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+          }
+        }
+      }
+    }
+  }
+}
+
+header .btnBurger {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  > span:nth-child(1) {
+    margin-bottom: 12px;
+    display: block;
+    height: 2px;
+    width: 32px;
+    transform-origin: right;
+    background-color: rgb(1 1 35/1);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .3s;
+    &.clicked {
+      transform: translate(0,0) rotate(-45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    }
+  }
+  > span:nth-child(2) {
+    margin-bottom: 10px;
+    display: block;
+    height: 2px;
+    width: 16px;
+    background-color: rgb(1 1 35/1);
+    transition-duration: .15s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-delay: .2s;
+    &.clicked {
+      width: 0;
+      transition-duration: .1s;
+    }
+  }
+  > span:nth-child(3) {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 0;
+    transform-origin: right;
+    transform: translate(0,0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    background-color: rgb(1 1 35/1);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .3s;
+    &.clicked {
+      width: 32px;
+      top: -3px;
+      
+    }
+  }
+}
+
+header .nav-desktop {
+  display: none;
+  @include desktop-screen {
+    display: flex;
+    justify-content: center;
+  }
+  > div {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+    overflow: auto;
+    @include desktop-screen {
+      overflow: initial;
+    }
+    > div {
+      margin-bottom: 128px;
+      text-align: center;
+      @include desktop-screen {
+        margin-bottom: 0;
+        display: flex;
+        gap: 16px;
+      }
+      > section {
+        margin-bottom: 48px;
+        font-family: Telegraf-SemiBold,sans-serif;
+        font-size: .75rem;
+        font-weight: 600;
+        letter-spacing: .96px;
+        line-height: 1rem;
+        text-transform: uppercase;
+        @include desktop-screen {
+          font-family: Telegraf-SemiBold,sans-serif;
+          font-size: .75rem;
+          font-weight: 600;
+          letter-spacing: .96px;
+          line-height: 1rem;
+          text-transform: uppercase;
+          margin-bottom: 0;
+          display: flex;
+          align-items: center;
+        }
+        > span {
+          @include desktop-screen {
+            padding: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+header .nav-action {
+  display: none;
+  @include desktop-screen {
+    z-index: 50;
+    display: inline-block;
+  }
+  > a {
+    text-decoration: inherit;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: rgb(1 1 35/1);
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    text-transform: uppercase;
+    color: rgb(255 255 255/1);
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    font-family: Telegraf-SemiBold,sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .96px;
+    line-height: 1rem;
+    text-transform: uppercase;
+    box-shadow: 9.30556px 18.0593px 50px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    @include desktop-screen {
+      font-family: Telegraf-SemiBold,sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .96px;
+      line-height: 1rem;
+      text-transform: uppercase;
+    }
+    > span {
+      position: relative;
+      margin-left: 16px;
+      transform: translate(0,-2px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+      > div {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        transform: translate(0,-1px) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+        overflow: hidden;
+        transition-duration: .15s;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-duration: .3s;
+      }
+      > svg {
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+#hero_section {
+  font-family: Telegraf-UltraLight,sans-serif;
+  >div {
+    column-gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    padding-left: 32px;
+    padding-right: 32px;
+    @include tablet-screen {
+      column-gap: 32px;
+      grid-template-columns: repeat(8,minmax(0,1fr));
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+    @include desktop-screen {
+      grid-template-columns: repeat(12,minmax(0,1fr));
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1312px;
+    }
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: -.96px;
+    line-height: 4rem;
+    @include desktop-screen {
+      font-size: 4rem;
+      font-weight: 300;
+      line-height: 5rem;
+    }
+  }
+  a.hero-button {
+    box-shadow: 9.30556px 18.0593px 50px rgba(139,145,190,.3);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .96px;
+    line-height: 1rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: rgb(1 1 35/1);
+    color: rgb(255 255 255/1);
+    @include desktop-screen {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .96px;
+      line-height: 1rem;
+      text-transform: uppercase;
+    }
+  }
+  .text-body-l {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    @include desktop-screen {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 2rem;
+    }
+  }
+  .before\:bg-primaryBleu800:before {
+    --tw-bg-opacity: 1;
+    background-color: rgb(72 26 245/var(--tw-bg-opacity));
+    content: var(--tw-content);
+  }
+}

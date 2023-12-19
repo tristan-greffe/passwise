@@ -1,3 +1,4 @@
 import Meta from './Meta'
+import Header from './Header'
 
-export { Meta }
+export { Meta, Header }

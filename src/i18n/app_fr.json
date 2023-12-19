@@ -2,6 +2,11 @@
   "CANCEL": "Annuler",
   "home": {
     "META_TITLE": "Gestionnaire de mots de passe sécurisé",
-    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !"
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
+    "TITLE": "Gestionnaire de mots de passe open source avec cryptage zero-knowledge",
+    "SUBTITLE": "30% des ransomwares sont liés aux mots de passe.",
+    "LOGIN": "🔓 Se connecter",
+    "SIGNUP": "S'inscrire",
+    "ACTION_BUTTON": "Essayer Passwise - 1min"
   }
 }
