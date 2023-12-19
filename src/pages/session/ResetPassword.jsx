@@ -6,40 +6,41 @@ import _ from 'lodash'
 import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
-function Signup () {
+function ResetPassword () {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [values, setValues] = useState({})
   const latestValuesRef = useRef(values)
   const fields = [
     {
-      id: 'name',
-      label: 'signup.NAME_FIELD_LABEL',
-      component: 'TextField'
-    },
-    {
       id: 'email',
-      label: 'signup.EMAIL_FIELD_LABEL',
+      label: 'resetPassword.EMAIL_FIELD_LABEL',
       component: 'TextField'
     },
     {
       id: 'password',
-      label: 'signup.PASSWORD_FIELD_LABEL',
+      label: 'resetPassword.PASSWORD_FIELD_LABEL',
       component: 'PasswordField'
     },
     {
       id: 'passwordConfirmation',
-      label: 'signup.CONFIRM_PASSWORD_FIELD_LABEL',
+      label: 'resetPassword.CONFIRM_PASSWORD_FIELD_LABEL',
       component: 'PasswordField'
+    },
+    {
+      id: 'token',
+      label: 'resetPassword.TOKEN_FIELD_LABEL',
+      component: 'TokenField'
     },
   ]
   const data = {
-    id: 'register-session',
-    title: 'signup.TITLE',
-    buttonLabel: 'signup.REGISTER_LABEL',
+    id: 'forgot-password-session',
+    title: 'resetPassword.TITLE',
+    message: 'resetPassword.MESSAGE',
+    buttonLabel: 'APPLY',
     action: {
-      label: 'signup.ALREADY_HAVE_AN_ACCOUNT_LABEL',
-      to: '/login'
+      label: 'resetPassword.RESEND_TOKEN',
+      to: '/forgot-password'
     }
   }
 
@@ -55,58 +56,67 @@ function Signup () {
     }))
   }
   function hasError () {
-    // Check has name
-    if (!_.has(latestValuesRef.current, 'name') || latestValuesRef.current.name.length < 1) {
-      toast.error(t('signup.MISSING_NAME'))
-      return true
-    }
     // Check has email
     if (!_.has(latestValuesRef.current, 'email' || latestValuesRef.current.email.length < 1)) {
-      toast.error(t('signup.MISSING_EMAIL'))
+      toast.error(t('resetPassword.MISSING_EMAIL'))
       return true
     }
     // Check has password
     if (!_.has(latestValuesRef.current, 'password') || latestValuesRef.current.password.length < 1) {
-      toast.error(t('signup.MISSING_PASSWORD'))
+      toast.error(t('resetPassword.MISSING_PASSWORD'))
       return true
     }
     // Check has password confirmation
     if (!_.has(latestValuesRef.current, 'passwordConfirmation') || latestValuesRef.current.passwordConfirmation.length < 1) {
-      toast.error(t('signup.MISSING_PASSWORD_CONFIRMATION'))
+      toast.error(t('resetPassword.MISSING_PASSWORD_CONFIRMATION'))
       return true
     }
     // Check password match
     if (latestValuesRef.current.password !== latestValuesRef.current.passwordConfirmation) {
-      toast.error(t('signup.PASSWORD_CONFIRMATION_NOT_MATCH'))
+      toast.error(t('resetPassword.PASSWORD_CONFIRMATION_NOT_MATCH'))
+      return true
+    }
+    // Check has token
+    if (!_.has(latestValuesRef.current, 'token')) {
+      toast.error(t('resetPassword.MISSING_TOKEN'))
+      return true
+    }
+    // Check token length
+    if (latestValuesRef.current.token.length < 6) {
+      toast.error(t('resetPassword.ERROR_TOKEN_LENGTH'))
       return true
     }
     // Check email validity
     if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(latestValuesRef.current.email)) {
-      toast.error(t('signup.EMAIL_VALIDITY'))
+      toast.error(t('resetPassword.EMAIL_VALIDITY'))
       return true
     }
     return false
   }
   async function onSubmit (e) {
     e.preventDefault()
+    console.log(latestValuesRef.current)
     if (hasError()) return
+    console.log(latestValuesRef.current)
     try {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
-      //await register(latestValuesRef.current)
+      //await sendResetPassword(latestValuesRef.current.email)
       setValues({})
       dispatch(setLoader({ open: false }))
+      toast.success(t('resetPassword.SUCCESS_MESSAGE'))
     } catch (error) {
       dispatch(setLoader({ open: false }))
+      toast.error(t('resetPassword.ERROR_MESSAGE'))
     }
   }
 
   return (
     <>
-      <Meta title="signup.META_TITLE" description="signup.META_DESCRIPTION" />
+      <Meta title="resetPassword.META_TITLE" description="resetPassword.META_DESCRIPTION" />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )
 }
 
-export default Signup
+export default ResetPassword

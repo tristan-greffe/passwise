@@ -1,0 +1,78 @@
+.buttons button {
+  background-color: var(--ogActionBlue);
+  border: none;
+  border-radius: 5px;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  margin-right: 1rem;
+  padding: 0.7rem 1.7rem;
+  position: relative;
+  right: 0;
+  transition: .3s ease-in-out;
+}
+
+.buttons button.withIcon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  position: relative;
+}
+
+.buttons button:disabled {
+  cursor: default;
+}
+
+
+.buttons button.grey {
+  background-color: #f6f7fe;
+  color: #181a3a;
+}
+
+.buttons button.grey.disabled {
+  color: #6f6f7c;
+  cursor: not-allowed;
+}
+
+.buttons button {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.buttons button.withIcon>svg {
+  height: auto;
+  left: 0.9rem;
+  position: absolute;
+  width: 0.8rem;
+}
+
+.buttons button {
+  background-color: #2833b7;
+  border: none;
+  border-radius: 5px;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  margin-right: 1rem;
+  padding: 0.7rem 1.7rem;
+  position: relative;
+  right: 0;
+  transition: .3s ease-in-out;
+}
+
+.buttons button.withIcon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  position: relative;
+}

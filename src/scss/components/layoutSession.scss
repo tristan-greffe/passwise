@@ -1,0 +1,138 @@
+// =====================================
+// ========== LAYOUT SESSION ===========
+// =====================================
+
+[id$="session"] {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  > span {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-text-stroke: 2.5px #d7d9ea;
+    bottom: 95%;
+    color: transparent;
+    font-size: 7.7vw;
+    opacity: .37;
+    position: absolute;
+    right: 0;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    @include desktop-screen {
+      -webkit-text-stroke: 0.18vw #d7d9ea;
+      font-size: 7.7vw;
+    }
+  }
+  >div {
+    background: linear-gradient(180deg,#fff 0,rgba(234,235,242,.19));
+    display: flex;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#30eaebf2",GradientType=0);
+    flex: 2 1;
+    flex-direction: column;
+    > h1 {
+      color: #ada8b6;
+      font-size:  clamp(1.1rem,1.7vw,1.3rem);
+      font-weight: 500;
+      margin: 5vh 15px;
+      text-transform: uppercase;
+      @include desktop-screen {
+        font-size: clamp(1.1rem,1.7vw,1.3rem);
+        margin-left: 2vw;
+        margin-top: calc(5vh - 3px);
+      }
+      > b {
+        color: #181a3a;
+        font-weight: 500;
+      }
+    }
+    > div {
+      align-items: center;
+      display: flex;
+      flex: 2 1;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      @include desktop-screen {
+        box-shadow: 0 0 3vw rgba(215,217,234,.25);
+        padding: 2vw;
+      }
+    }
+  }
+}
+
+[id$="session"] .locker {
+  background-color: #fff;
+  border: 2px solid #f6f7fe;
+  border-radius: 5px;
+  box-shadow: 0 0 25px rgba(215,217,234,.25);
+  padding: 35px 30px;
+  position: relative;
+  width: 350px;
+  @include tablet-screen {
+    width: 400px;
+  }
+  .locker_head {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    padding: 15px 5px;
+    @include desktop-screen {
+      margin-bottom: 1vh;
+      margin-top: 1vh;
+      padding: 1.3vh 0.4vw;
+      font-size: clamp(.6rem,1.1vw,1rem);
+    }
+    >div {
+      color: #ada8b6;
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+      transition: .3s ease-in-out;
+      color: #181a3a;
+      font-weight: 600;
+      @include desktop-screen {
+        font-size: clamp(.6rem,1.1vw,1rem);
+      }
+      &:after {
+        background-color: #ada8b6;
+        border-radius: 2px;
+        bottom: -13px;
+        content: "";
+        height: 2px;
+        left: 12.5%;
+        opacity: 0;
+        position: absolute;
+        transition: .5s ease-in-out;
+        width: 75%;
+        background-color: #f47532;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+[id$="session"] .locker_action  {
+  color: #ada8b6;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: -20px;
+  margin-top: 10px;
+  text-align: left;
+  width: 400px;
+  @include desktop-screen {
+    font-size: clamp(.7rem,1.1vw,.9rem);
+    margin-bottom: -4vh;
+    margin-top: 2vh;
+    width: 30vw;
+  }
+}

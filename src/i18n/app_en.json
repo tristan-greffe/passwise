@@ -1,4 +1,5 @@
 {
+  "APPLY": "Apply",
   "home": {
     "META_TITLE": "Secure password manager",
     "META_DESCRIPTION": "Find out how to manage your passwords securely !",
@@ -10,10 +11,69 @@
   },
   "login": {
     "META_TITLE": "Login | Passwise",
-    "META_DESCRIPTION": "Find out how to manage your passwords securely !"
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "TITLE": "Connection",
+    "FORGOT_YOUR_PASSWORD_LABEL": "Forgot your password ?",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter your password",
+    "LOGIN_LABEL": "Log in",
+    "LOGIN_ERROR": "Wrong credentials or service unavailable, please try again",
+    "MISSING_PROPERTY": "Your email and password are required"
   },
   "signup": {
     "META_TITLE": "Signup | Passwise",
-    "META_DESCRIPTION": "Find out how to manage your passwords securely !"
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "TITLE": "Registration",
+    "NAME_FIELD_LABEL": "Enter your name",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter a password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your password",
+    "REGISTER_LABEL": "Register",
+    "MISSING_NAME": "Your name is required",
+    "MISSING_EMAIL": "Your email is required",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Password confirmation is required",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Password confirmation must match password",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "ALREADY_HAVE_AN_ACCOUNT_LABEL": "Already have an account ?",
+    "WEAK_PASSWORD_MIN": "Your password must be at least 8 characters long",
+    "WEAK_PASSWORD_MAX": "Your password must have a maximum length of 128 characters",
+    "WEAK_PASSWORD_LOWERCASE": "Your password must contain at least one lowercase letter",
+    "WEAK_PASSWORD_UPPERCASE": "Your password must contain at least one capital letter",
+    "WEAK_PASSWORD_DIGITS": "Your password must contain at least one digit",
+    "WEAK_PASSWORD_SYMBOLS": "Your password must contain at least one special character such as :;?!+-.,^@",
+    "WEAK_PASSWORD_ONEOF": "Your password is recognized as one of the most common passwords",
+    "EMAIL_ALREADY_TAKEN": "Email already taken !",
+    "REGISTER_ERROR": "Wrong input or service unavailable, please try again"
+  },
+  "resetPassword": {
+    "META_TITLE": "Reset Password | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "TITLE": "Resetting",
+    "MESSAGE": "Reset your password ?",
+    "RESEND_TOKEN": "Resend reset password code",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter your new password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your new password",
+    "TOKEN_FIELD_LABEL": "Enter the code received by email",
+    "MISSING_EMAIL": "Your email is required",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Password confirmation is required",
+    "MISSING_TOKEN": "Code received by email is required",
+    "ERROR_TOKEN_LENGTH": "Code received by email must contain 6 digits",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Password confirmation must match password",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "SUCCESS_MESSAGE": "Password reset, you will receive a confirmation email",
+    "ERROR_MESSAGE": "Error while trying to reset password, please try again"
+  },
+  "forgotPassword": {
+    "META_TITLE": "Reset password | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "TITLE": "Reset my password ?",
+    "MESSAGE": "Enter your email address and we will send you a code to reset your password",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "MISSING_EMAIL": "Your email is required",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "ERROR_MESSAGE_DEFAULT": "Error while sending email, please check the address and send it again or try again later"
   }
 }

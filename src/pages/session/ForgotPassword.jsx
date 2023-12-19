@@ -6,7 +6,7 @@ import _ from 'lodash'
 import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
-function Login () {
+function ForgotPassword () {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [values, setValues] = useState({})
@@ -14,23 +14,15 @@ function Login () {
   const fields = [
     {
       id: 'email',
-      label: 'login.EMAIL_FIELD_LABEL',
+      label: 'forgotPassword.EMAIL_FIELD_LABEL',
       component: 'TextField'
-    },
-    {
-      id: 'password',
-      label: 'login.PASSWORD_FIELD_LABEL',
-      component: 'PasswordField'
-    },
+    }
   ]
   const data = {
-    id: 'login-session',
-    title: 'login.TITLE',
-    buttonLabel: 'login.LOGIN_LABEL',
-    action: {
-      label: 'login.FORGOT_YOUR_PASSWORD_LABEL',
-      to: '/forgot-password'
-    }
+    id: 'forgot-password-session',
+    title: 'forgotPassword.TITLE',
+    message: 'forgotPassword.MESSAGE',
+    buttonLabel: 'APPLY'
   }
 
   useEffect(() => {
@@ -45,8 +37,14 @@ function Login () {
     }))
   }
   function hasError () {
-    if (!_.has(latestValuesRef.current, 'email') || !_.has(latestValuesRef.current, 'password') || latestValuesRef.current.email.length < 1 || latestValuesRef.current.password.length < 1) {
-      toast.error(t('login.MISSING_PROPERTY'))
+    // Check has email
+    if (!_.has(latestValuesRef.current, 'email' || latestValuesRef.current.email.length < 1)) {
+      toast.error(t('forgotPassword.MISSING_EMAIL'))
+      return true
+    }
+    // Check email validity
+    if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(latestValuesRef.current.email)) {
+      toast.error(t('forgotPassword.EMAIL_VALIDITY'))
       return true
     }
     return false
@@ -57,21 +55,21 @@ function Login () {
     try {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
-      //await login(latestValuesRef.current.email, latestValuesRef.current.password)
+      //await sendResetPassword(latestValuesRef.current.email)
       setValues({})
       dispatch(setLoader({ open: false }))
     } catch (error) {
       dispatch(setLoader({ open: false }))
-      toast.error(t('login.LOGIN_ERROR'))
+      toast.error(t('forgotPassword.ERROR_MESSAGE_DEFAULT'))
     }
   }
 
   return (
     <>
-      <Meta title="login.META_TITLE" description="login.META_DESCRIPTION" />
+      <Meta title="forgotPassword.META_TITLE" description="forgotPassword.META_DESCRIPTION" />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )
 }
 
-export default Login
+export default ForgotPassword
