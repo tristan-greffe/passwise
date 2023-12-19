@@ -1,5 +1,4 @@
 {
-  "CANCEL": "Cancel",
   "home": {
     "META_TITLE": "Secure password manager",
     "META_DESCRIPTION": "Find out how to manage your passwords securely !",
@@ -8,5 +7,13 @@
     "LOGIN": "Login",
     "SIGNUP": "Signup",
     "ACTION_BUTTON": "Try Passwise - 1min"
+  },
+  "login": {
+    "META_TITLE": "Login | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !"
+  },
+  "signup": {
+    "META_TITLE": "Signup | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !"
   }
 }

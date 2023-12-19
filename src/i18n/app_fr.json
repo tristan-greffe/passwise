@@ -1,5 +1,4 @@
 {
-  "CANCEL": "Annuler",
   "home": {
     "META_TITLE": "Gestionnaire de mots de passe sécurisé",
     "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
@@ -8,5 +7,13 @@
     "LOGIN": "🔓 Se connecter",
     "SIGNUP": "S'inscrire",
     "ACTION_BUTTON": "Essayer Passwise - 1min"
+  },
+  "login": {
+    "META_TITLE": "Se connecter | Passwise",
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !"
+  },
+  "signup": {
+    "META_TITLE": "S'inscrire | Passwise",
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !"
   }
 }
