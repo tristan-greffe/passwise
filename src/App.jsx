@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Toast } from './components'
+import { useSelector } from 'react-redux'
+import { Toast, Loader } from './components'
 import { Home, Login, Signup } from './pages'
 
 function App () {
-
+  const { loader } = useSelector(state => state.component)
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -12,6 +14,7 @@ function App () {
         <Route path="/signup" element={<Signup />} />
       </Routes>
       <Toast />
+      {loader.open && <Loader />}
     </BrowserRouter>
   )
 }
