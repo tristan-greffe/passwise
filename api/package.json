@@ -1,0 +1,56 @@
+{
+  "name": "passwise-api",
+  "description": "Passwise Services",
+  "version": "1.0.0",
+  "keywords": [
+    "Password",
+    "Manager"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tristan-greffe/passwise.git"
+  },
+  "author": {
+    "name": "Tristan Greffe contributors",
+    "url": "https://github.com/tristan-greffe"
+  },
+  "bugs": {
+    "url": "https://github.com/tristan-greffe/passwise/issues"
+  },
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --watch src --exec npm run debug",
+    "debug": "cross-env NODE_ENV=development node --inspect src/index.js",
+    "prod": "cross-env NODE_ENV=production node src/index.js"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^5.0.8",
+    "@feathersjs/authentication-local": "^5.0.8",
+    "@feathersjs/authentication-oauth": "^5.0.8",
+    "@feathersjs/configuration": "^5.0.8",
+    "@feathersjs/errors": "^5.0.8",
+    "@feathersjs/express": "^5.0.8",
+    "@feathersjs/feathers": "^5.0.8",
+    "@feathersjs/mongodb": "^5.0.8",
+    "@feathersjs/schema": "^5.0.8",
+    "@feathersjs/socketio": "^5.0.8",
+    "@feathersjs/transport-commons": "^5.0.8",
+    "connect-history-api-fallback": "^2.0.0",
+    "containerized": "^1.0.2",
+    "email-templates": "^2.7.1",
+    "feathers-authentication-management": "^4.0.2",
+    "feathers-hooks-common": "^8.0.0",
+    "feathers-mailer": "^4.1.1",
+    "mongodb": "^5.8.0"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "superagent": "^8.1.2",
+    "winston": "^3.8.2"
+  }
+}
