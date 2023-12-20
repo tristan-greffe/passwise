@@ -35,15 +35,15 @@
     }
   }
   a.hero-button {
-    box-shadow: 9.30556px 18.0593px 50px rgba(139,145,190,.3);
+    box-shadow: 9.30556px 18.0593px 50px $boxShadow;
     font-size: .75rem;
     font-weight: 600;
     letter-spacing: .96px;
     line-height: 1rem;
     text-transform: uppercase;
     border-radius: 30px;
-    background-color: rgb(1 1 35/1);
-    color: rgb(255 255 255/1);
+    background-color: $primaryDark;
+    color: $white;
     @include desktop-screen {
       font-size: .75rem;
       font-weight: 600;

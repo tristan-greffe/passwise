@@ -93,8 +93,7 @@ header .nav-mobile {
     z-index: -10;
     height: 100vh;
     width: 100%;
-
-    background-color: rgb(255 255 255/1);
+    background-color: $white;
     padding-bottom: 72px;
     padding-top: 136px;
     transition-property: transform;
@@ -133,7 +132,7 @@ header .nav-mobile {
         display: flex;
         align-items: center;
         border-radius: 30px;
-        background-color: rgb(1 1 35/1);
+        background-color: $primaryDark;
         padding-left: 32px;
         padding-right: 32px;
         padding-bottom: 24px;
@@ -148,7 +147,7 @@ header .nav-mobile {
         letter-spacing: .96px;
         line-height: 1rem;
         text-transform: uppercase;
-        box-shadow: 9.30556px 18.0593px 50px rgba(139,145,190,.3);
+        box-shadow: 9.30556px 18.0593px 50px $boxShadow;
         > span {
           position: relative;
           margin-left: 16px;
@@ -185,7 +184,7 @@ header .btnBurger {
     height: 2px;
     width: 32px;
     transform-origin: right;
-    background-color: rgb(1 1 35/1);
+    background-color: $primaryDark;
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .3s;
@@ -198,7 +197,7 @@ header .btnBurger {
     display: block;
     height: 2px;
     width: 16px;
-    background-color: rgb(1 1 35/1);
+    background-color: $primaryDark;
     transition-duration: .15s;
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -215,7 +214,7 @@ header .btnBurger {
     width: 0;
     transform-origin: right;
     transform: translate(0,0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
-    background-color: rgb(1 1 35/1);
+    background-color: $primaryDark;
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .3s;
@@ -295,13 +294,13 @@ header .nav-action {
     display: flex;
     align-items: center;
     border-radius: 30px;
-    background-color: rgb(1 1 35/1);
+    background-color: $primaryDark;
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 24px;
     padding-top: 24px;
     text-transform: uppercase;
-    color: rgb(255 255 255/1);
+    color: $white;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     font-family: Telegraf-SemiBold,sans-serif;

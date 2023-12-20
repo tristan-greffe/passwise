@@ -27,9 +27,9 @@
     }
   }
   >div {
-    background: linear-gradient(180deg,#fff 0,rgba(234,235,242,.19));
+    background: linear-gradient(180deg,$white 0,rgba(234,235,242,.19));
     display: flex;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#30eaebf2",GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$white,endColorstr="#30eaebf2",GradientType=0);
     flex: 2 1;
     flex-direction: column;
     > a {
@@ -53,7 +53,7 @@
       width: 100%;
       z-index: 10;
       @include desktop-screen {
-        box-shadow: 0 0 3vw rgba(215,217,234,.25);
+        box-shadow: 0 0 3vw $boxShadow;
         padding: 2vw;
       }
     }
@@ -61,10 +61,10 @@
 }
 
 [id$="session"] .locker {
-  background-color: #fff;
-  border: 2px solid #f6f7fe;
+  background-color: $white;
+  border: 2px solid $primaryLight;
   border-radius: 5px;
-  box-shadow: 0 0 25px rgba(215,217,234,.25);
+  box-shadow: 0 0 25px $boxShadow;
   padding: 35px 30px;
   position: relative;
   width: 350px;
@@ -83,7 +83,7 @@
       font-size: clamp(.6rem,1.1vw,1rem);
     }
     >div {
-      color: #ada8b6;
+      color: $light;
       font-size: 18px;
       font-weight: 500;
       position: relative;
@@ -94,7 +94,7 @@
         font-size: clamp(.6rem,1.1vw,1rem);
       }
       &:after {
-        background-color: #ada8b6;
+        background-color: $light;
         border-radius: 2px;
         bottom: -13px;
         content: "";
@@ -104,7 +104,7 @@
         position: absolute;
         transition: .5s ease-in-out;
         width: 75%;
-        background-color: #f47532;
+        background-color: $accent;
         opacity: 1;
       }
     }
@@ -112,7 +112,7 @@
 }
 
 [id$="session"] .locker_action  {
-  color: #ada8b6;
+  color: $light;
   display: flex;
   justify-content: center;
   font-size: 13px;
