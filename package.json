@@ -28,6 +28,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@feathersjs/authentication-client": "^5.0.12",
+    "@feathersjs/client": "^5.0.12",
+    "@feathersjs/feathers": "^5.0.12",
+    "@feathersjs/rest-client": "^5.0.12",
+    "@feathersjs/socketio-client": "^5.0.12",
     "@reduxjs/toolkit": "^2.0.1",
     "i18next": "^23.7.11",
     "lodash": "^4.17.21",
