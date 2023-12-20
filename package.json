@@ -21,7 +21,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development PORT=8080 vite --port 8080",
+    "dev": "cross-env NODE_ENV=development vite",
     "prod": "cd api && npm run prod",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
