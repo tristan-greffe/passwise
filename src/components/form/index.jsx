@@ -25,7 +25,7 @@ function Form ({ fields, onFieldChanged, onSubmit, buttonLabel }) {
         }
       })}
       <div className="buttons mt-6">
-        <button className="withIcon" onClick={onSubmit}>{ t(buttonLabel)}</button>
+        <button onClick={onSubmit}>{ t(buttonLabel)}</button>
       </div>
     </form>
   )

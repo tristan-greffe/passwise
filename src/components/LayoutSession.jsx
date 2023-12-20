@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Logo } from '../assets'
-import Form from './form/Form'
+import Form from './form'
 
 function LayoutSession ({ data, fields, onSubmit, onFieldChanged }) {
   const { t } = useTranslation()
