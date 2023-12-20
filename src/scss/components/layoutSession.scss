@@ -32,20 +32,12 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#30eaebf2",GradientType=0);
     flex: 2 1;
     flex-direction: column;
-    > h1 {
-      color: #ada8b6;
-      font-size:  clamp(1.1rem,1.7vw,1.3rem);
-      font-weight: 500;
+    > a {
+      z-index: 2000;
       margin: 5vh 15px;
-      text-transform: uppercase;
       @include desktop-screen {
-        font-size: clamp(1.1rem,1.7vw,1.3rem);
         margin-left: 2vw;
         margin-top: calc(5vh - 3px);
-      }
-      > b {
-        color: #181a3a;
-        font-weight: 500;
       }
     }
     > div {
