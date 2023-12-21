@@ -9,6 +9,13 @@
     "SIGNUP": "S'inscrire",
     "ACTION_BUTTON": "Essayer Passwise - 1min"
   },
+  "session": {
+    "DISCONNECT": "La connexion au serveur a été interrompue, merci de patienter jusqu'à la reconnexion...",
+    "RECONNECT": "Tentative de reconnexion en cours...",
+    "REFUSED": "Votre connexion a été refusée par le serveur, vous avez été déconnecté...",
+    "RETRY": "Rééssayer",
+    "ALERT": "Alerte"
+  },
   "login": {
     "META_TITLE": "Se connecter | Passwise",
     "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
