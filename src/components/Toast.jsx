@@ -4,6 +4,7 @@ function Toast ()  {
   return (
     <Toaster
       position= 'bottom-left'
+      containerStyle={{zIndex: 99999}}
       toastOptions={{
         duration: 10000,
         success: {
