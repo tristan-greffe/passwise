@@ -4,5 +4,6 @@ import Login from './session/Login'
 import Signup from './session/Signup'
 import ForgotPassword from './session/ForgotPassword'
 import ResetPassword from './session/ResetPassword'
+import VerifyEmail from './session/VerifyEmail'
 
-export { Home, Login, Signup, ForgotPassword, ResetPassword }
+export { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail }

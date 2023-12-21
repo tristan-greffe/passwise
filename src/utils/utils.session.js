@@ -1,9 +1,13 @@
-import { Notify } from 'quasar'
+import toast from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../store/userSlice.js'
 import { getLocale } from './utils.locale'
-import { i18n } from '../i18n'
-import { useStore } from '../boot/store'
-import { api } from '../boot/api'
+import { api } from '../api.js'
 import _ from 'lodash'
+
+const { t } = useTranslation()
+const dispatch = useDispatch()
 
 export async function login (email, password) {
   const payload = {
@@ -13,7 +17,7 @@ export async function login (email, password) {
   }
   const response = await api.authenticate(payload)
   api.authentication.setAccessToken(response.accessToken)
-  useStore().setUser(response.user)
+  dispatch(setUser(response.user))
 }
 
 export async function register (user) {
@@ -24,10 +28,7 @@ export async function register (user) {
   try {
     await api.service('api/users').create(user)
   } catch (error) {
-    Notify.create({
-      type: 'negative', 
-      message: error.data.translationKey ? i18n.t('Register.' + error.data.translationKey) : i18n.t('Register.REGISTER_ERROR') 
-    })
+    toast.error(error.data.translationKey ? t('Register.' + error.data.translationKey) : t('Register.REGISTER_ERROR'))
   }
   await login(user.email, user.password)
 }
@@ -35,14 +36,14 @@ export async function register (user) {
 export async function logout () {
   await api.logout()
   await api.authentication.removeAccessToken()
-  useStore().setUser({})
+  dispatch(setUser({}))
 }
 
 export async function restoreSession () {
   try {
     const response = await api.reAuthenticate()
     const user = response.user ? response.user : {}
-    useStore().setUser(user)
+    dispatch(setUser(user))
   } catch (error) {
     await logout()
   }

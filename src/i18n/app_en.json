@@ -82,5 +82,19 @@
     "MISSING_EMAIL": "Your email is required",
     "EMAIL_VALIDITY": "Your email is invalid",
     "ERROR_MESSAGE_DEFAULT": "Error while sending email, please check the address and send it again or try again later"
+  },
+  "verifyEmail": {
+    "META_TITLE": "Check email address | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "TITLE": "Check my email address",
+    "MESSAGE": "Enter the code received by email to validate your email address",
+    "TOKEN_FIELD_LABEL": "Enter the code received by email",
+    "EMAIL_VERIFIED": "Your address has been verified. An email has been sent to you to confirm the change.",
+    "MISSING_TOKEN": "Code received by email is required",
+    "ERROR_TOKEN_LENGTH": "Code received by email must contain 6 digits",
+    "ACTION": "Resend verification code",
+    "ERROR_MESSAGE": "Invalid code, request a new one",
+    "RESEND_TOKEN_SUCCESS": "A new verification code has been sent to you",
+    "RESEND_TOKEN_ERROR": "We were unable to send you a new verification code. If the problem persists, please contact us."
   }
 }

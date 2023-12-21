@@ -3,8 +3,11 @@ import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 import _ from 'lodash'
+import { getLocale } from '../../utils/utils.locale'
 import { setLoader } from '../../store/componentSlice'
+import { setUser } from '../../store/userSlice'
 import { Meta, LayoutSession } from '../../components'
+import { api } from '../../api'
 
 function Signup () {
   const { t } = useTranslation()
@@ -93,10 +96,25 @@ function Signup () {
     try {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
-      //await register(latestValuesRef.current)
+      let payload = {
+        name: latestValuesRef.current.name,
+        email: latestValuesRef.current.email,
+        password: latestValuesRef.current.password,
+        locale: getLocale()
+      }
+      await api.service('api/users').create(payload)
+      payload = {
+        strategy: 'local',
+        email: latestValuesRef.current.email,
+        password: latestValuesRef.current.password
+      }
+      const response = await api.authenticate(payload)
+      api.authentication.setAccessToken(response.accessToken)
+      dispatch(setUser(response.user))
       setValues({})
       dispatch(setLoader({ open: false }))
     } catch (error) {
+      toast.error(error.data.translationKey ? t('signup.' + error.data.translationKey) : t('signup.REGISTER_ERROR'))
       dispatch(setLoader({ open: false }))
     }
   }

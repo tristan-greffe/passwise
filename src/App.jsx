@@ -10,7 +10,7 @@ import { setUser } from './store/userSlice'
 import { setLoader } from './store/componentSlice'
 import { api, initializeApi } from './api'
 import config from './config.js'
-import { Home, Login, Signup, ForgotPassword, ResetPassword } from './pages'
+import { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail } from './pages'
 
 function App () {
   // Data
@@ -81,6 +81,7 @@ function App () {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
       </Routes>
       <Toast />
       {loader.open && <Loader />}

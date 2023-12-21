@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 import _ from 'lodash'
+import { resetPassword } from '../../utils/utils.account'
 import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
@@ -95,13 +96,11 @@ function ResetPassword () {
   }
   async function onSubmit (e) {
     e.preventDefault()
-    console.log(latestValuesRef.current)
     if (hasError()) return
-    console.log(latestValuesRef.current)
     try {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
-      //await sendResetPassword(latestValuesRef.current.email)
+      await resetPassword(latestValuesRef.current.email, latestValuesRef.current.token, latestValuesRef.current.password)
       setValues({})
       dispatch(setLoader({ open: false }))
       toast.success(t('resetPassword.SUCCESS_MESSAGE'))

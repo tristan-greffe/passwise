@@ -2,28 +2,30 @@ import { useState, useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
 import _ from 'lodash'
-import { sendResetPassword } from '../../utils/utils.account'
+import { verifySignup } from '../../utils/utils.account'
 import { setLoader } from '../../store/componentSlice'
+import { setUser } from '../../store/userSlice'
 import { Meta, LayoutSession } from '../../components'
 
-function ForgotPassword () {
+function VerifyEmail () {
   const { t } = useTranslation()
   const dispatch = useDispatch()
+  const { user } = useSelector(state => state.user)
   const [values, setValues] = useState({})
   const latestValuesRef = useRef(values)
   const fields = [
     {
-      id: 'email',
-      label: 'forgotPassword.EMAIL_FIELD_LABEL',
-      component: 'TextField'
+      id: 'token',
+      component: 'TokenField'
     }
   ]
   const data = {
-    id: 'forgot-password-session',
-    title: 'forgotPassword.TITLE',
-    message: 'forgotPassword.MESSAGE',
-    buttonLabel: 'APPLY'
+    id: 'verify-email-session',
+    title: 'verifyEmail.TITLE',
+    buttonLabel: 'APPLY',
+    message: 'verifyEmail.MESSAGE'
   }
 
   useEffect(() => {
@@ -38,14 +40,14 @@ function ForgotPassword () {
     }))
   }
   function hasError () {
-    // Check has email
-    if (!_.has(latestValuesRef.current, 'email' || latestValuesRef.current.email.length < 1)) {
-      toast.error(t('forgotPassword.MISSING_EMAIL'))
+    // Check has token
+    if (!_.has(latestValuesRef.current, 'token')) {
+      toast.error(t('verifyEmail.MISSING_TOKEN'))
       return true
     }
-    // Check email validity
-    if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(latestValuesRef.current.email)) {
-      toast.error(t('forgotPassword.EMAIL_VALIDITY'))
+    // Check token length
+    if (latestValuesRef.current.token.length < 6) {
+      toast.error(t('verifyEmail.ERROR_TOKEN_LENGTH'))
       return true
     }
     return false
@@ -56,21 +58,24 @@ function ForgotPassword () {
     try {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
-      await sendResetPassword(latestValuesRef.current.email)
+      await verifySignup(latestValuesRef.current.token, user.email)
+      user.isVerified = true
+      dispatch(setUser(user))
       setValues({})
       dispatch(setLoader({ open: false }))
+      toast.success(t('verifyEmail.EMAIL_VERIFIED'))
     } catch (error) {
+      toast.error(t('verifyEmail.ERROR_MESSAGE'))
       dispatch(setLoader({ open: false }))
-      toast.error(t('forgotPassword.ERROR_MESSAGE_DEFAULT'))
     }
   }
 
   return (
     <>
-      <Meta title="forgotPassword.META_TITLE" description="forgotPassword.META_DESCRIPTION" />
+      <Meta title="verifyEmail.META_TITLE" description="verifyEmail.META_DESCRIPTION" />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )
 }
 
-export default ForgotPassword
+export default VerifyEmail

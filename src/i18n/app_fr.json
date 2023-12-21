@@ -82,5 +82,19 @@
     "MISSING_EMAIL": "Votre email est requis",
     "EMAIL_VALIDITY": "Votre email n'est pas valide",
     "ERROR_MESSAGE_DEFAULT": "Impossible d'envoyer le mail, merci de vérifier votre adresse et essayez à nouveau"
+  },
+  "verifyEmail": {
+    "META_TITLE": "Vérification de l'email | Passwise",
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
+    "TITLE": "Vérifier mon adresse mail",
+    "MESSAGE": "Saisissez le code reçu par email pour valider votre adresse mail",
+    "TOKEN_FIELD_LABEL": "Saisissez le code reçu par email",
+    "EMAIL_VERIFIED": "Votre adresse a été vérifié. Un mail vous a été envoyé pour confirmer le changement.",
+    "MISSING_TOKEN": "Le code reçu par email est requis",
+    "ERROR_TOKEN_LENGTH": "Le code reçu par e-mail doit contenir 6 chiffres",
+    "ACTION": "Me renvoyer un code de vérification",
+    "ERROR_MESSAGE": "Code invalide, demandez-en un nouveau",
+    "RESEND_TOKEN_SUCCESS": "Un nouveau code de vérification vous a été envoyé",
+    "RESEND_TOKEN_ERROR": "Nous n'avons pas pu vous envoyer un nouveau code de vérification. Si le problème persiste, veuillez nous contacter."
   }
 }
