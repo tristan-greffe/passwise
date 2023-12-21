@@ -39,6 +39,7 @@
     "@feathersjs/transport-commons": "^5.0.8",
     "connect-history-api-fallback": "^2.0.0",
     "containerized": "^1.0.2",
+    "ejs": "^3.1.9",
     "email-templates": "^2.7.1",
     "feathers-authentication-management": "^4.0.2",
     "feathers-hooks-common": "^8.0.0",
