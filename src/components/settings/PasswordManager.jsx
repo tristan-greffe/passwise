@@ -77,7 +77,6 @@ const PasswordManager = forwardRef((props, ref) => {
       dispatch(setLoader({ open: false }))
       toast.success(t('passwordManager.PASSWORD_CHANGED'))
     } catch (error) {
-      console.log(error)
       dispatch(setLoader({ open: false }))
       toast.error(error.data.translationKey ? t('register.'+ error.data.translationKey) : t('passwordManager.PASSWORD_ERROR_MESSAGE'))
     }
