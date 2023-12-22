@@ -118,6 +118,18 @@
     "PROFIL_TITLE": "Manage my username",
     "EMAIL_TITLE": "Manage my email address",
     "PASSWORD_TITLE": "Manage my password",
-    "SUBSCRIPTION_TITLE": "Manage my subscription"
+    "DELETE_ACCOUNT_TITLE": "Delete my account"
+  },
+  "passwordManager": {
+    "TITLE": "Change my password",
+    "PASSWORD_CHANGED": "Your password has been successfully changed",
+    "OLD_PASSWORD_FIELD_LABEL": "Enter your old password",
+    "PASSWORD_FIELD_LABEL": "Enter your new password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your new password",
+    "MISSING_OLD_PASSWORD": "Your old password is required",
+    "MISSING_PASSWORD": "Your new password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Confirmation of your new password is required",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Confirmation of new password must match new password",
+    "PASSWORD_ERROR_MESSAGE": "The data you provided did not allow us to change your password"
   }
 }

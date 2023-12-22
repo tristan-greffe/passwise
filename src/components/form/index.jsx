@@ -24,9 +24,9 @@ function Form ({ fields, onFieldChanged, onSubmit, buttonLabel }) {
           )
         }
       })}
-      <div className="buttons mt-6">
+      { buttonLabel && <div className="buttons mt-6">
         <button onClick={onSubmit}>{ t(buttonLabel)}</button>
-      </div>
+      </div>}
     </form>
   )
 }
