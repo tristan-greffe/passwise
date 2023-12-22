@@ -86,9 +86,7 @@ const PasswordManager = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({ apply: apply }))
   
   return (
-    <>
-      <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />
-    </>
+    <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />
   )
 })
 
