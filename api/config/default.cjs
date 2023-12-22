@@ -33,7 +33,7 @@ module.exports = {
   bodyParser: {
     json: { limit: 10 * 1024 * 1024 } // 10MB
   },
-  distPath: fs.existsSync(path.join(__dirname, '../../dist/pwa')) ? path.join(__dirname, '../../dist/pwa') : path.join(__dirname, '../../dist/spa'),
+  distPath: path.join(__dirname, '../../dist'),
   passwordPolicy: {
     minLength: 8,
     maxLength: 128,
