@@ -1,3 +1,5 @@
+import { DashboardIcon, StarIcon, SettingsIcon, PasswordIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, EmailIcon } from './assets'
+
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
 
@@ -22,6 +24,70 @@ if (process.env.NODE_APP_INSTANCE === 'dev') {
 let origin
 process.env.NODE_ENV === 'development' ? origin = 'http://localhost:' + serverPort : origin = domain
 
+const navLinks = [
+  {
+    title: 'navbar.DASHBOARD',
+    to: '/dashboard',
+    Icon: DashboardIcon,
+    spacer: true
+  },
+  {
+    title: 'navbar.PASSWORDS',
+    to: '/vault',
+    Icon: StarIcon,
+    spacer: true
+  },
+  {
+    title: 'navbar.SETTINGS',
+    to: '/settings',
+    Icon: SettingsIcon,
+    spacer: false
+  }
+]
+
+const passwordSettings = {
+  id: 'manage-password',
+  title: 'settings.PASSWORD_SECTION_TITLE',
+  IconTitle: PasswordIcon,
+  content: [
+    {
+      id: 'import-password',
+      title: 'settings.IMPORT_PASSWORD_TITLE',
+      description: 'settings.IMPORT_PASSWORD_DESCRIPTION',
+      Icon: ImportPasswordIcon,
+    },
+    {
+      id: 'export-password',
+      title: 'settings.EXPORT_PASSWORD_TITLE',
+      description: 'settings.EXPORT_PASSWORD_DESCRIPTION',
+      Icon: ExportPasswordIcon,
+    }
+  ]
+}
+
+const accountSettings = {
+  id: 'manage-account',
+  title: 'settings.ACCOUNT_SECTION_TITLE',
+  IconTitle: AccountIcon,
+  content: [
+    {
+      id: 'profil-manager',
+      title: 'settings.PROFIL_TITLE',
+      Icon: UserIcon,
+    },
+    {
+      id: 'email-manager',
+      title: 'settings.EMAIL_TITLE',
+      Icon: EmailIcon,
+    },
+    {
+      id: 'password-manager',
+      title: 'settings.PASSWORD_TITLE',
+      Icon: PasswordIcon,
+    }
+  ]
+}
+
 export default {
   domain,
   origin,
@@ -31,5 +97,8 @@ export default {
   transport: 'websocket', // Could be 'http' or 'websocket',
   storage: {
     useProxy: true
-  }
+  },
+  navLinks,
+  passwordSettings,
+  accountSettings
 }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 23">
+  <g transform="translate(0 1.5)">
+    <line x2="29" fill="none" stroke="#181a3a" stroke-width="3"></line>
+    <line x2="29" transform="translate(0 10)" fill="none" stroke="#181a3a" stroke-width="3"></line>
+    <line x2="29" transform="translate(0 20)" fill="none" stroke="#181a3a" stroke-width="3"></line>
+  </g>
+</svg>

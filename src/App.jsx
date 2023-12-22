@@ -1,24 +1,23 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import toast from 'react-hot-toast'
 import logger from 'loglevel'
 import _ from 'lodash'
-import toast from 'react-hot-toast'
-import { Toast, Loader } from './components'
 import { setUser } from './store/userSlice'
 import { setLoader } from './store/componentSlice'
 import { api, initializeApi } from './api'
 import config from './config.js'
+import { Toast, Loader, Modal } from './components'
 import { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
-  Dashboard } from './pages'
+  Dashboard, Vault, Settings } from './pages'
 
 function App () {
   // Data
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const { loader } = useSelector(state => state.component)
+  const { modal, loader } = useSelector(state => state.component)
   const { user } = useSelector(state => state.user)
   let pendingReconnection = null
   initializeApi(config)
@@ -100,9 +99,12 @@ function App () {
         <Route path="/reset-password" element={<PublicPageGuard user={user} from={'reset-password'}><ResetPassword /></PublicPageGuard>} />
         <Route path="/verify-email" element={<PublicPageGuard user={user} from={'verify-email'}><VerifyEmail /></PublicPageGuard>} />
         <Route path="/dashboard" element={<PrivatePageGuard user={user}><Dashboard /></PrivatePageGuard>} />
+        <Route path="/vault" element={<PrivatePageGuard user={user}><Vault /></PrivatePageGuard>} />
+        <Route path="/settings" element={<PrivatePageGuard user={user}><Settings /></PrivatePageGuard>} />
       </Routes>
       <Toast />
       {loader.open && <Loader />}
+      {modal.open && <Modal />}
     </BrowserRouter>
   )
 }

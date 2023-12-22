@@ -30,7 +30,7 @@ function Header () {
   }, [])
 
   return (
-    <header className={`${ scrolled ? "bg-white" : "bg-transparent" }`}>
+    <header id="hero_header" className={`${ scrolled ? "bg-white" : "bg-transparent" }`}>
       <div></div>
       <div>
         <div>

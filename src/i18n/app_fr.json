@@ -1,5 +1,6 @@
 {
   "APPLY": "Appliquer",
+  "CANCEL": "Annuler",
   "home": {
     "META_TITLE": "Gestionnaire de mots de passe sécurisé",
     "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
@@ -96,5 +97,27 @@
     "ERROR_MESSAGE": "Code invalide, demandez-en un nouveau",
     "RESEND_TOKEN_SUCCESS": "Un nouveau code de vérification vous a été envoyé",
     "RESEND_TOKEN_ERROR": "Nous n'avons pas pu vous envoyer un nouveau code de vérification. Si le problème persiste, veuillez nous contacter."
+  },
+  "navbar": {
+    "DASHBOARD": "Dashboard",
+    "PASSWORDS": "Mot de passe",
+    "FILES": "Fichiers",
+    "SETTINGS": "Paramètres",
+    "LOGOUT": "Se déconnecter"
+  },
+  "settings": {
+    "TITLE": "Mon compte",
+    "META_TITLE": "",
+    "META_DESCRIPTION": "",
+    "PASSWORD_SECTION_TITLE": "Options liées aux mots de passe",
+    "IMPORT_PASSWORD_TITLE": "Importer vos mots de passe",
+    "IMPORT_PASSWORD_DESCRIPTION": "Importer vos mots de passe à partir d'un fichier CSV.",
+    "EXPORT_PASSWORD_TITLE": "Exporter vos mots de passe",
+    "EXPORT_PASSWORD_DESCRIPTION": "Exporter vos mots de passe de votre espace personnel.",
+    "ACCOUNT_SECTION_TITLE": "Options liées à mon compte",
+    "PROFIL_TITLE": "Modifier mon nom d'utilisateur",
+    "EMAIL_TITLE": "Modifier mon adresse email",
+    "PASSWORD_TITLE": "Modifier mon mot de passe",
+    "SUBSCRIPTION_TITLE": "Gérer mon abonnement"
   }
 }

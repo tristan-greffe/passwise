@@ -1,0 +1,133 @@
+// ===================================
+// ========= MODAL SECTION ===========
+// ===================================
+
+#modal {
+  background-color: rgba(32,32,48,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  /* Container */ 
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    margin-bottom: 3vh;
+    @include tablet-screen {
+      width: 50%;
+      margin-bottom: 2vh;
+    }
+    /* Close icon */ 
+    > svg {
+      cursor: pointer;
+      height: 15px;
+      width: auto;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      @include desktop-screen {
+        height: 1vw;
+        margin-bottom: 0.5vw;
+        margin-right: 0.3vw;
+        width: 1.7vw;
+      }
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+}
+
+/* Container */ 
+#modal .modal_wrap {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  max-height: 85vh;
+  padding: 25px;
+  @include desktop-screen {
+    border-radius: 0.4vw;
+    padding: 2vh 1.7vw;
+  }
+  /* Header - title */ 
+  .modal_head {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    margin-bottom: 3vh;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    @include desktop-screen {
+      margin-bottom: 2vh;
+      font-size: clamp(.85rem,1.4vw,1.1rem);
+    }
+  }
+  /* Body - content */ 
+  .modal_body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    overflow-y: auto;
+    @include desktop-screen {
+      padding: 1vh 3vw 3vh;
+    }
+  }
+  /* Foot - button action */ 
+  .modal_foot {
+    display: flex;
+    align-items: center;
+    @include desktop-screen {
+      min-height: 5vh;
+      padding-bottom: 1vh;
+      padding-left: 0.5vw;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+      bottom: 0;
+      right: 0;
+      font-size: clamp(.7rem,1.1vw,1.1rem);
+      font-weight: 500;
+      letter-spacing: .03em;
+      margin-right: 1.3vw;
+      padding: 1.2vh 2vw;
+      height: 100%;
+      transition: .3s ease-in-out;
+      background-color: #d7d9ea;
+      > svg {
+        height: 8px;
+        @include desktop-screen {
+          height: 0.8vw;
+        }
+        path {
+          fill: #181a3a;
+          stroke: #181a3a;
+      }
+      }
+    }
+    button:nth-child(2) {
+      background-color: transparent;
+    }
+  }
+}

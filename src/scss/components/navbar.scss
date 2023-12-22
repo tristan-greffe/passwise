@@ -1,0 +1,236 @@
+// =====================================
+// =========== NAV SECTION =============
+// =====================================
+
+
+nav {
+  box-shadow: $boxShadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 500;
+}
+
+/* Top nav */
+nav > .nav_head {
+  display: none;
+  overflow: hidden;
+  position: relative;
+  @include desktop-screen {
+    display: block;
+  }
+  > svg {
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  > div {
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    margin-bottom: 3vh;
+    padding: 2vh 1vw 2.5vh;
+    > svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      min-height: 100%;
+      object-fit: cover;
+    }
+    > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $secondary;
+      border-radius: 0.2vw;
+      width: 1.9vw;
+      height: 1.9vw;
+      max-height: 1.8rem;
+      letter-spacing: -.07vw;
+      font-size: clamp(.7rem,.75vw,.9rem);
+      font-weight: 700;
+      margin-right: 0.5vw;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      max-width: 150px;
+      b {
+        font-size: clamp(.65rem,.7vw,.8rem);
+        margin-bottom: 0.2vh;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      small {
+        color: #d7d9ea;
+        font-size: clamp(.55rem,.6vw,.7rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+/* Nav body */
+nav .nav_body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-right: 10px;
+  a {
+    & .active {
+      color: $primary;
+    }
+    > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      letter-spacing: .25px;
+      margin-bottom: 1.313rem;
+      padding: 0.5rem 1.8rem;
+      > div {
+        margin-right: 0.9rem;
+        width: 1.25rem;
+      }
+      > span {
+        color: #737390;
+        font-weight: 600;
+        &:hover {
+          color: $secondary
+        }
+      }
+    }
+    &.active > div {
+      background-color: rgba(201,204,214,.25);
+      path, circle {
+        fill: $accent;
+      }
+      > span {
+        color: $primary;
+      }
+      &:after {
+        @include desktop-screen {
+          content: "";
+          position: absolute;
+          right: -0.625rem;
+          top: 0;
+          height: 2.5rem;
+          width: 0.188rem;
+          background-color: $accent;
+          border-bottom-left-radius: 0.188rem;
+          border-top-left-radius: 0.188rem;
+        }
+      }
+    }
+  }
+  .spacer {
+    margin-top: 30px;
+    padding: 25px 0;
+    @include desktop-screen {
+      padding: 25px;
+      padding: 1.5vw;
+    }
+  }
+}
+
+nav > .nav_body {
+  display: none;
+  @include desktop-screen {
+    display: block;
+  }
+}
+
+/* Foot nav */
+nav .nav_foot {
+  display: none;
+  @include desktop-screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url('@/assets/wave/nav-bottom-wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 0;
+    padding-bottom: 20px;
+    height: 13vh;
+  }
+  svg {
+    height: 14px;
+    margin-left: 10px;
+  }
+}
+
+/* Mobile nav */
+nav .mobile-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include desktop-screen {
+    display: none;
+  }
+  .nav_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: $white;
+    box-shadow: $boxShadow;
+    z-index: 502;
+    button {
+      left: 20px;
+      position: absolute;
+    }
+    svg {
+      height: 23px;
+      width: auto;
+    }
+  }
+  .nav-pop {
+    &.show {
+      display: flex;
+    }
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    background-color: $primaryLight;
+    background-image: url('@/assets/wave/nav-mobile-wave.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    padding: 80px 20px 20px;
+    z-index: 501;
+  }
+  .nav-pop_head {
+    align-items: center;
+    background-color: $white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    width: 100%;
+    > button {
+      background: transparent; 
+      outline: none; 
+      overflow: hidden; 
+      display: flex; 
+      width: 22px;
+    }
+  }
+  .nav-pop_foot {
+    display: flex;
+    height: auto;
+    padding-bottom: 0;
+  }
+}

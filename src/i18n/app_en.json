@@ -1,5 +1,6 @@
 {
   "APPLY": "Apply",
+  "CANCEL": "Cancel",
   "home": {
     "META_TITLE": "Secure password manager",
     "META_DESCRIPTION": "Find out how to manage your passwords securely !",
@@ -96,5 +97,27 @@
     "ERROR_MESSAGE": "Invalid code, request a new one",
     "RESEND_TOKEN_SUCCESS": "A new verification code has been sent to you",
     "RESEND_TOKEN_ERROR": "We were unable to send you a new verification code. If the problem persists, please contact us."
+  },
+  "navbar": {
+    "DASHBOARD": "Dashboard",
+    "PASSWORDS": "Passwords",
+    "FILES": "Files",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Logout"
+  },
+  "settings": {
+    "TITLE": "My account",
+    "META_TITLE": "",
+    "META_DESCRIPTION": "",
+    "PASSWORD_SECTION_TITLE": "Password options",
+    "IMPORT_PASSWORD_TITLE": "Import your passwords",
+    "IMPORT_PASSWORD_DESCRIPTION": "Import passwords from CSV file.",
+    "EXPORT_PASSWORD_TITLE": "Export your passwords",
+    "EXPORT_PASSWORD_DESCRIPTION": "Export passwords from your personal space.",
+    "ACCOUNT_SECTION_TITLE": "My account options",
+    "PROFIL_TITLE": "Manage my username",
+    "EMAIL_TITLE": "Manage my email address",
+    "PASSWORD_TITLE": "Manage my password",
+    "SUBSCRIPTION_TITLE": "Manage my subscription"
   }
 }

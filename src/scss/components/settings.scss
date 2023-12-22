@@ -1,0 +1,142 @@
+// =====================================
+// ========= SETTINGS SECTION ==========
+// =====================================
+
+
+/* Title Section */ 
+[id^="manage"] > div:first-child {
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+  svg {
+    height: 1rem;
+    margin-right: 0.4rem;
+    circle, ellipse, path {
+      fill: #ada8b6;
+    }
+  }
+}
+
+/* Card container */ 
+[id^="manage"] > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 30px;
+}
+
+/* Rectangle card */  
+[id$="password"]:not([id^="manage"]) {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  background-color: #f6f7fe;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: .3s ease-in-out;
+  @include tablet-screen {
+    width: 220px;
+  }
+  svg {
+    width: 2rem;
+    height: auto;
+    margin-right: 0.75rem;
+    circle, ellipse, path {
+      fill: rgb(18, 22, 44);
+    }
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    b {
+      font-size: .75rem;
+      line-height: 120%;
+    }
+    small {
+      color: #6f6f7c;
+      font-size: .7rem;
+      line-height: 130%;
+      margin-top: 0.2rem;
+    }
+  }
+  &:hover {
+    bottom: 4px;
+    right: 2px;
+    box-shadow: 3px 5px 12px rgba(215,217,234,.1);
+    &:after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+/* Square card */
+[id$="manager"] {
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  background-color: #f6f7fe;
+  border: 0.125rem solid #f6f7fe;
+  border-radius: 0.3125rem;
+  padding: 0.5625rem 0.5rem 0.375rem;
+  transition-duration: .2s;
+  width: 47%;
+  height: 7.5rem;
+  @include tablet-screen {
+    width: 10rem;
+    height: 10rem;
+  }
+  > div {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-self: center;
+    color: #d7d9ea;
+    position: relative;
+    transition-duration: .3s;
+    > svg {
+      height: auto;
+      width: 1.4rem;
+      @include tablet-screen {
+        width: 1.625rem;
+      }
+      circle, ellipse, path {
+        fill: rgb(18, 22, 44);;
+      }
+    }
+  }
+  > b { 
+    text-align: center;
+    word-break: normal;
+    font-size: .7rem;
+    font-weight: 500;
+    line-height: .9375rem;
+    @include tablet-screen {
+      font-size: .8rem;
+    }
+  }
+  &:hover {
+    bottom: 0.4375rem;
+    &:after {
+      bottom: -10px;
+      content: "";
+      height: 100%;
+      position: absolute;
+      right: -10px;
+      width: 100%;
+    }
+  }
+}

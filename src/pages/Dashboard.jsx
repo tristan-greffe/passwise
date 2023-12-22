@@ -1,8 +1,14 @@
-import React from 'react'
+import { Meta, layout } from '../components'
 
 function Dashboard() {
+
   return (
-    <div>Dashboard</div>
+    <>
+      <Meta title="dashboard.META_TITLE" description="dashboard.META_DESCRIPTION" />
+      <layout.Layout>
+
+      </layout.Layout>
+    </>
   )
 }
 

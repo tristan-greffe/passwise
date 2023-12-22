@@ -1,0 +1,220 @@
+// =====================================
+// ========== LAYOUT SECTION ===========
+// =====================================
+
+
+#main-layout {
+  display: flex;
+  font-weight: 600;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  transition: .3s ease-in-out;
+  > div {
+    background: rgba(201,204,214,.25);
+    flex: 2 1;
+    height: 100%;
+    position: relative;
+  }
+}
+
+/* Header */
+#main-layout header {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  > div {
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    padding: 0.6vh 2.1vw;
+    background-color: $primary;
+  }
+  img {
+    height: 2vh;
+  }
+}
+
+/* Main */
+#main-layout main {
+  display: flex;
+  height: 100%;
+  margin: 20px 30px;
+  z-index: 100;
+  @include desktop-screen {
+    margin: 3vh 2vw 2vh;
+    z-index: 300;
+  }
+  #layout-board {
+    background-color: #fff;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 25px rgba(201,204,214,.4);
+    display: flex;
+    flex: 2 1;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 0 21px 25px 21px;
+    position: relative;
+    @include desktop-screen {
+      border-bottom-right-radius: 5vw;
+      border-top-right-radius: 0.3rem;
+      box-shadow: 0 0 1vw rgba(201,204,214,.4);
+      padding: 0 1vw 25px 13px;
+      width: 10rem;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    .board_head {
+      margin-bottom: 40px;
+      margin-left: 15px;
+      position: relative;
+      @include desktop-screen {
+        margin-bottom: 3vh;
+        margin-left: 1vw;
+      }
+      div:first-child {
+        align-items: center;
+        color: #181a3a;
+        display: flex;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        @include desktop-screen {
+          font-size: clamp(1rem,1.5vw,2rem);
+          margin-bottom: 1.5vh;
+          margin-top: 2.5vh;
+        }
+        h1 {
+          font-size: 15px;
+        }
+        svg {
+          margin-right: 13px;
+          @include desktop-screen {
+            min-width: 1rem;
+            height: clamp(1rem,1vw,1.5rem);
+            margin-right: 0.8vw;
+            width: clamp(1rem,1vw,1.5rem);
+          }
+        }
+      }
+      div:nth-child(2) {
+        span:first-child {
+          color: #181a3a;
+          font-size: 13px;
+          font-weight: 400;
+          margin-right: 13px;
+          position: relative;
+          @include desktop-screen {
+            font-size: clamp(.6rem,.8vw,1.2rem);
+            margin-right: 0.8em;
+          }
+          &:after {
+            background-color: #d7d9ea;
+            content: "";
+            height: 100%;
+            position: absolute;
+            right: -13px;
+            top: 0;
+            width: 1px;
+            @include desktop-screen {
+              right: -0.8em;
+            }
+          }
+        }
+        span:nth-child(2) {
+          color: #ada8b6;
+          font-size: 11px;
+          font-weight: 400;
+          margin-left: 13px;
+          @include desktop-screen {
+            font-size: clamp(.6rem,.75vw,1.1rem);
+            margin-left: 0.8em;
+          }
+        }
+      }
+    }
+    .board_body {
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 0 15px;
+      position: relative;
+      z-index: 100;
+      height: 100%;
+      @include desktop-screen {
+        align-content: flex-start;
+        display: grid;
+      }
+    }
+  }
+  #layout-sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    max-height: 100%;
+    width: 300px;
+    z-index: 5;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 0 25px rgba(201,204,214,.4);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 50px);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    @include desktop-screen {
+      border-radius: 0.3rem;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      box-shadow: 0 0 25px rgba(201,204,214,.4);
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    .sidebar_head {
+      align-items: center;
+      box-shadow: 0 3px 15px rgba(201,204,214,.2);
+      color: #181a3a;
+      cursor: default;
+      display: flex;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 15px;
+      svg {
+        bottom: 0;
+        margin-right: 11px;
+        position: relative;
+        transition: .3s ease-in-out;
+        @include desktop-screen {
+          bottom: 0;
+          margin-right: 11px;
+          position: relative;
+          transition: .3s ease-in-out;
+        }
+      }
+    }
+    .sidebar_body {
+      flex-grow: 1;
+      max-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 35px;
+      @include desktop-screen {
+        max-height: 100%;
+        overflow-y: auto;
+        padding: 18px 20px;
+      }
+    }
+  }
+}
