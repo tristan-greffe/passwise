@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next'
 
 function TextField ({ properties, onChange }) {
+  // Data
   const { t } = useTranslation()
 
+  // fucntion
   function onFieldChanged (e) {
     e.preventDefault()
     onChange(properties.id, e.target.value)

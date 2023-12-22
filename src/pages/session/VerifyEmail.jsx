@@ -11,6 +11,7 @@ import { setUser } from '../../store/userSlice'
 import { Meta, LayoutSession } from '../../components'
 
 function VerifyEmail () {
+  // Data
   const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function VerifyEmail () {
     message: 'verifyEmail.MESSAGE'
   }
 
+  // Hook
   useEffect(() => {
     latestValuesRef.current = values
   }, [values])

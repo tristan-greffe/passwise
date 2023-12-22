@@ -4,14 +4,15 @@ import { useTranslation } from 'react-i18next'
 import { Logo, ArrowRightIcon } from '../assets'
 
 function Header () {
+  // Data
   const { t } = useTranslation()
   const [clicked, setClicked] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const handleBurgerClick = () => {
-    setClicked(!clicked)
-  }
+  // Function
+  const handleBurgerClick = () => { setClicked(!clicked) }
 
+  // Hook
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY

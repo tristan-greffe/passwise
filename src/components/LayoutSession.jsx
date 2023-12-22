@@ -7,9 +7,11 @@ import { Logo } from '../assets'
 import Form from './form'
 
 function LayoutSession ({ data, fields, onSubmit, onFieldChanged }) {
+  // Data
   const { t } = useTranslation()
   const { user } = useSelector(state => state.user)
 
+  // Function
   async function resendToken () {
     try {
       await resendVerifySignup(user.email)

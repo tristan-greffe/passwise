@@ -11,6 +11,7 @@ import { Meta, LayoutSession } from '../../components'
 import { api } from '../../api'
 
 function Signup () {
+  // Data
   const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -48,6 +49,7 @@ function Signup () {
     }
   }
 
+  // Hook
   useEffect(() => {
     latestValuesRef.current = values
   }, [values])

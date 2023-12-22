@@ -9,6 +9,7 @@ import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
 function ResetPassword () {
+  // Data
   const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -47,6 +48,7 @@ function ResetPassword () {
     }
   }
 
+  // Hook
   useEffect(() => {
     latestValuesRef.current = values
   }, [values])

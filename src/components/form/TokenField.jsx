@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import _ from 'lodash'
 
 function TokenField ({ properties, onChange }) {
+  // Data
   const { t } = useTranslation()
   const tokenLength = 6
   const [otp, setOtp] = useState(new Array(tokenLength).fill(''))

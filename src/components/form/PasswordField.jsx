@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function PasswordField ({ properties, onChange }) {
+  // Data
   const { t } = useTranslation()
   const [showPassword, setShowPassword] = useState(false)
 
+  // Function
   function handlePasswordVisibility (e) {
     e.preventDefault()
     setShowPassword(!showPassword)

@@ -29,14 +29,15 @@ const NavLink = ({ title, to, Icon, spacer }) => {
 }
 
 const Navbar = () => {
+  // Data
   const { t } = useTranslation()
   const { user } = useSelector(state => state.user)
   const dispatch = useDispatch()
   const [menuState, setMenuState] = useState(false)
   const navLinks = config.navLinks
   
+  // Function
   const toggleMenu = () => { setMenuState(!menuState) }
-
   const logout = async () => {
     await api.logout()
     await api.authentication.removeAccessToken()

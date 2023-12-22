@@ -9,6 +9,7 @@ import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
 function ForgotPassword () {
+  // Data
   const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -28,6 +29,7 @@ function ForgotPassword () {
     buttonLabel: 'APPLY'
   }
 
+  // Hook
   useEffect(() => {
     latestValuesRef.current = values
   }, [values])

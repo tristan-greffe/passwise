@@ -6,12 +6,14 @@ import { setModal } from '../store/componentSlice'
 import { settings } from './'
 
 const Modal = () => {
+  // Data
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const componentRef = useRef()
   const { modalConstructionKey } = useSelector((state) => state.component.modal)
   const [modalContent, setModalContent] = useState({ labelTitle: '', labelApplyButton: '', component: null } )
 
+  // Hook
   useEffect(() => {
     switch (modalConstructionKey) {
       case 'profil-manager':
@@ -47,6 +49,7 @@ const Modal = () => {
     }
   }, [modalConstructionKey])
 
+  // Functions
   const closeModal = () => { dispatch(setModal({ open: false, modalConstructionKey: '' })) }
   const applySettings = () => { 
     // Invoke apply function from component

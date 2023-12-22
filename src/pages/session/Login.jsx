@@ -9,9 +9,8 @@ import { setUser } from '../../store/userSlice'
 import { Meta, LayoutSession } from '../../components'
 import { api } from '../../api'
 
-import { useSelector } from 'react-redux'
-
 function Login () {
+  // Data
   const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
@@ -39,6 +38,7 @@ function Login () {
     }
   }
 
+  // Hooks
   useEffect(() => {
     latestValuesRef.current = values
   }, [values])
