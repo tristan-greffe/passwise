@@ -71,11 +71,6 @@ const accountSettings = {
   IconTitle: AccountIcon,
   content: [
     {
-      id: 'profil-manager',
-      title: 'settings.PROFIL_TITLE',
-      Icon: UserIcon,
-    },
-    {
       id: 'email-manager',
       title: 'settings.EMAIL_TITLE',
       Icon: EmailIcon,

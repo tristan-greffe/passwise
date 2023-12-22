@@ -1,10 +1,9 @@
-import { useState, useRef, useEffect } from 'react'
-import { forwardRef, useImperativeHandle } from 'react'
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import toast from 'react-hot-toast'
 import _ from 'lodash'
-import { setLoader } from '../../store/componentSlice'
+import { setLoader, setModal } from '../../store/componentSlice'
 import { changePassword } from '../../utils/utils.account'
 import Form from '../form'
 
@@ -68,13 +67,14 @@ const PasswordManager = forwardRef((props, ref) => {
     }
     return false
   }
-  async function apply (e) {
- 
+  const closeModal = () => { dispatch(setModal({ open: false, modalConstructionKey: '' })) }
+  async function apply () {
     if (hasError()) return
     try {
       dispatch(setLoader({ open: true }))
-      await changePassword(user.email, latestValuesRef.current.passwordConfirmation, latestValuesRef.current.newPassword)
+      await changePassword(user.email, latestValuesRef.current.oldPassword, latestValuesRef.current.newPassword)
       dispatch(setLoader({ open: false }))
+      closeModal()
       toast.success(t('passwordManager.PASSWORD_CHANGED'))
     } catch (error) {
       dispatch(setLoader({ open: false }))

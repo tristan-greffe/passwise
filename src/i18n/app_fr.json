@@ -131,5 +131,24 @@
     "MISSING_PASSWORD_CONFIRMATION": "La confirmation de votre nouveau mot de passe est requis",
     "PASSWORD_CONFIRMATION_NOT_MATCH": "La confirmation du nouveau mot de passe doit correspondre au nouveau mot de passe",
     "PASSWORD_ERROR_MESSAGE": "Les données que vous avez fournies ne nous ont pas permis de modifier votre mot de passe"
+  },
+  "emailManager": {
+    "TITLE": "Modifier mon adresse mail",
+    "PASSWORD_FIELD_LABEL": "Saisissez votre mot de passe",
+    "EMAIL_FIELD_LABEL": "Saisissez votre nouvelle adresse mail",
+    "TOKEN_LABEL": "Pour valider votre nouvelle adresse mail, saisissez le code reçu par email",
+    "EMAIL_CHANGED": "Votre nouvelle adresse a été prise en compte. Un mail vous a été envoyé pour confirmer le changement.",
+    "ERROR_MESSAGE": "Code invalide",
+    "MISSING_PASSWORD": "Votre mot de passe est requis",
+    "MISSING_EMAIL": "Votre email est requis",
+    "EMAIL_VALIDITY": "Votre nouvelle adresse mail n'est pas valide"
+  },
+  "deleteAccountManager": {
+    "TITLE": "Supprimer mon compte",
+    "QUESTION": "Etes vous sûr de vourloir supprimer votre compte ?",
+    "CONFIRMATION_TITLE": "Attention: la suppression de votre compte est irrévocable et toutes les données qui y sont attachées seront perdues",
+    "CONFIRMATION": "Saisissez l'email associé à votre compte pour confirmer la suprression",
+    "SUCCESS_MESSAGE": "Votre compte a été supprimé",
+    "ERROR_MESSAGE": "Impossible de supprimer votre compte, veuillez réessayer"
   }
 }

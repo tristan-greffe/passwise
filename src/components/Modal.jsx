@@ -16,13 +16,6 @@ const Modal = () => {
   // Hook
   useEffect(() => {
     switch (modalConstructionKey) {
-      case 'profil-manager':
-        setModalContent({
-          labelTitle: 'profilManager.TITLE',
-          labelApplyButton: 'APPLY',
-          component: <settings.ProfilManager ref={componentRef} />
-        })
-        break 
       case 'email-manager':
         setModalContent({
           labelTitle: 'emailManager.TITLE',
@@ -53,8 +46,7 @@ const Modal = () => {
   const closeModal = () => { dispatch(setModal({ open: false, modalConstructionKey: '' })) }
   const applySettings = () => { 
     // Invoke apply function from component
-    componentRef.current.apply() 
-    closeModal()
+    componentRef.current.apply()
   }
 
   return (

@@ -131,5 +131,24 @@
     "MISSING_PASSWORD_CONFIRMATION": "Confirmation of your new password is required",
     "PASSWORD_CONFIRMATION_NOT_MATCH": "Confirmation of new password must match new password",
     "PASSWORD_ERROR_MESSAGE": "The data you provided did not allow us to change your password"
+  },
+  "emailManager": {
+    "TITLE": "Change my email address",
+    "PASSWORD_FIELD_LABEL": "Enter your password",
+    "EMAIL_FIELD_LABEL": "Enter your new email address",
+    "TOKEN_LABEL": "To validate your new email address, enter the code you received by email",
+    "EMAIL_CHANGED": "You new address has been taken into account. An email has been sent to you to confirm the change.",
+    "ERROR_MESSAGE": "Invalid code",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_EMAIL": "Your email is required",
+    "EMAIL_VALIDITY": "Your new email address is invalid"
+  },
+  "deleteAccountManager": {
+    "TITLE": "Delete my account",
+    "QUESTION": "Are you sure you want to delete your account ?",
+    "CONFIRMATION_TITLE": "Warning: the deletion of your account is irrevocable and all data attached to it will be lost",
+    "CONFIRMATION": "Enter your account email to confirm the deletion",
+    "SUCCESS_MESSAGE": "Your account has been deleted",
+    "ERROR_MESSAGE": "Unable to delete your account, please try again"
   }
 }
