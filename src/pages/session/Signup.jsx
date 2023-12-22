@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
@@ -10,6 +11,7 @@ import { Meta, LayoutSession } from '../../components'
 import { api } from '../../api'
 
 function Signup () {
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [values, setValues] = useState({})
@@ -113,6 +115,7 @@ function Signup () {
       dispatch(setUser(response.user))
       setValues({})
       dispatch(setLoader({ open: false }))
+      navigate('/verify-email')
     } catch (error) {
       toast.error(error.data.translationKey ? t('signup.' + error.data.translationKey) : t('signup.REGISTER_ERROR'))
       dispatch(setLoader({ open: false }))

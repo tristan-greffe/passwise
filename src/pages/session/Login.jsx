@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
@@ -11,7 +12,7 @@ import { api } from '../../api'
 import { useSelector } from 'react-redux'
 
 function Login () {
-  const { user } = useSelector(state => state.user)
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [values, setValues] = useState({})
@@ -72,7 +73,7 @@ function Login () {
       dispatch(setUser(response.user))
       setValues({})
       dispatch(setLoader({ open: false }))
-      console.log(user)
+      navigate('/dashboard')
     } catch (error) {
       dispatch(setLoader({ open: false }))
       toast.error(t('login.LOGIN_ERROR'))

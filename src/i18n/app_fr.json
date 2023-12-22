@@ -89,7 +89,7 @@
     "TITLE": "Vérifier mon adresse mail",
     "MESSAGE": "Saisissez le code reçu par email pour valider votre adresse mail",
     "TOKEN_FIELD_LABEL": "Saisissez le code reçu par email",
-    "EMAIL_VERIFIED": "Votre adresse a été vérifié. Un mail vous a été envoyé pour confirmer le changement.",
+    "EMAIL_VERIFIED": "Votre adresse a été vérifié.",
     "MISSING_TOKEN": "Le code reçu par email est requis",
     "ERROR_TOKEN_LENGTH": "Le code reçu par e-mail doit contenir 6 chiffres",
     "ACTION": "Me renvoyer un code de vérification",

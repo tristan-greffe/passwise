@@ -1,22 +1,25 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import logger from 'loglevel'
+import _ from 'lodash'
 import toast from 'react-hot-toast'
 import { Toast, Loader } from './components'
 import { setUser } from './store/userSlice'
 import { setLoader } from './store/componentSlice'
 import { api, initializeApi } from './api'
 import config from './config.js'
-import { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail } from './pages'
+import { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
+  Dashboard } from './pages'
 
 function App () {
   // Data
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const { loader } = useSelector(state => state.component)
+  const { user } = useSelector(state => state.user)
   let pendingReconnection = null
   initializeApi(config)
 
@@ -48,8 +51,8 @@ function App () {
   async function handleAuthentication () {
     try {
       const response = await api.reAuthenticate()
-      const user = response.user ? response.user : {}
-      dispatch(setUser(user))
+      const person = response.user ? response.user : {}
+      dispatch(setUser(person))
     } catch (error) {
       await api.logout()
       await api.authentication.removeAccessToken()
@@ -73,15 +76,30 @@ function App () {
     handleAuthentication()
   }, [])
 
+  // Guards
+  const PublicPageGuard = ({ user, from, children }) => {
+    if (from === 'verify-email' && _.isEmpty(user)) return <Navigate to='/login' replace />
+    if (!_.isEmpty(user) && user.isVerified === true) return <Navigate to='/dashboard' replace />
+    if (from === 'home' || from === 'verify-email') return children
+    if (!_.isEmpty(user) && user.isVerified === false) return <Navigate to='/verify-email' replace />
+    return children
+  }
+  const PrivatePageGuard = ({ user, children }) => {
+    if (_.isEmpty(user) || user.isVerified === false) return <Navigate to='/login' replace />
+    return children
+  }
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="*" element={<Navigate to='/' replace />} />
+        <Route path="/" element={<PublicPageGuard user={user} from={'home'}><Home /></PublicPageGuard>} />
+        <Route path="/login" element={<PublicPageGuard user={user} from={'login'}><Login /></PublicPageGuard>} />
+        <Route path="/signup" element={<PublicPageGuard user={user} from={'signup'}><Signup /></PublicPageGuard>} />
+        <Route path="/forgot-password" element={<PublicPageGuard user={user} from={'forgot-password'}><ForgotPassword /></PublicPageGuard>} />
+        <Route path="/reset-password" element={<PublicPageGuard user={user} from={'reset-password'}><ResetPassword /></PublicPageGuard>} />
+        <Route path="/verify-email" element={<PublicPageGuard user={user} from={'verify-email'}><VerifyEmail /></PublicPageGuard>} />
+        <Route path="/dashboard" element={<PrivatePageGuard user={user}><Dashboard /></PrivatePageGuard>} />
       </Routes>
       <Toast />
       {loader.open && <Loader />}

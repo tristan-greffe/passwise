@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
@@ -8,6 +9,7 @@ import { setLoader } from '../../store/componentSlice'
 import { Meta, LayoutSession } from '../../components'
 
 function ForgotPassword () {
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [values, setValues] = useState({})
@@ -59,6 +61,7 @@ function ForgotPassword () {
       await sendResetPassword(latestValuesRef.current.email)
       setValues({})
       dispatch(setLoader({ open: false }))
+      navigate('/reset-password')
     } catch (error) {
       dispatch(setLoader({ open: false }))
       toast.error(t('forgotPassword.ERROR_MESSAGE_DEFAULT'))

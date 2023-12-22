@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
@@ -10,6 +11,7 @@ import { setUser } from '../../store/userSlice'
 import { Meta, LayoutSession } from '../../components'
 
 function VerifyEmail () {
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.user)
@@ -59,12 +61,13 @@ function VerifyEmail () {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
       await verifySignup(latestValuesRef.current.token, user.email)
-      user.isVerified = true
-      dispatch(setUser(user))
+      dispatch(setUser({ ...user, isVerified: true}))
       setValues({})
       dispatch(setLoader({ open: false }))
       toast.success(t('verifyEmail.EMAIL_VERIFIED'))
+      navigate('/dashboard')
     } catch (error) {
+      console.log(error)
       toast.error(t('verifyEmail.ERROR_MESSAGE'))
       dispatch(setLoader({ open: false }))
     }
