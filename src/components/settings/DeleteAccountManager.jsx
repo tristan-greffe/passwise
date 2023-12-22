@@ -1,8 +1,8 @@
 import { forwardRef, useImperativeHandle } from 'react'
 
-const SubscriptionManager = forwardRef((props, ref) => {
+const DeleteAccountManager = forwardRef((props, ref) => {
   const apply = () => {
-    console.log('apply subscription')
+    console.log('apply')
   }
   // Expose apply function through the ref
   useImperativeHandle(ref, () => ({ apply: apply }))
@@ -14,4 +14,4 @@ const SubscriptionManager = forwardRef((props, ref) => {
   )
 })
 
-export default SubscriptionManager
+export default DeleteAccountManager

@@ -2,6 +2,6 @@ import Section from './Section'
 import EmailManager from './EmailManager'
 import PasswordManager from './PasswordManager'
 import ProfilManager from './ProfilManager'
-import SubscriptionManager from './SubscriptionManager'
+import DeleteAccountManager from './DeleteAccountManager'
 
-export { Section, EmailManager, PasswordManager, ProfilManager, SubscriptionManager }
+export { Section, EmailManager, PasswordManager, ProfilManager, DeleteAccountManager }

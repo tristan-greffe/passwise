@@ -1,4 +1,4 @@
-import { DashboardIcon, StarIcon, SettingsIcon, PasswordIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, EmailIcon } from './assets'
+import { DashboardIcon, StarIcon, SettingsIcon, PasswordIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, EmailIcon, UserShieldIcon } from './assets'
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
@@ -84,6 +84,11 @@ const accountSettings = {
       id: 'password-manager',
       title: 'settings.PASSWORD_TITLE',
       Icon: PasswordIcon,
+    },
+    {
+      id: 'delete-account-manager',
+      title: 'settings.DELETE_ACCOUNT_TITLE',
+      Icon: UserShieldIcon,
     }
   ]
 }

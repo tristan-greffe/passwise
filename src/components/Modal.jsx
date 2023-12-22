@@ -19,29 +19,29 @@ const Modal = () => {
       case 'profil-manager':
         setModalContent({
           labelTitle: 'profilManager.TITLE',
-          labelApplyButton: 'SEND',
+          labelApplyButton: 'APPLY',
           component: <settings.ProfilManager ref={componentRef} />
         })
         break 
       case 'email-manager':
         setModalContent({
           labelTitle: 'emailManager.TITLE',
-          labelApplyButton: 'SEND',
+          labelApplyButton: 'APPLY',
           component: <settings.EmailManager ref={componentRef} />
         })
         break
       case 'password-manager':
         setModalContent({
           labelTitle: 'passwordManager.TITLE',
-          labelApplyButton: 'SEND',
+          labelApplyButton: 'APPLY',
           component: <settings.PasswordManager ref={componentRef} />
         })
         break
-      case 'subscription-manager':
+      case 'delete-account-manager':
         setModalContent({
-          labelTitle: 'subscriptionManager.TITLE',
-          labelApplyButton: 'SEND',
-          component: <settings.SubscriptionManager ref={componentRef} />
+          labelTitle: 'deleteAccountManager.TITLE',
+          labelApplyButton: 'APPLY',
+          component: <settings.DeleteAccountManager ref={componentRef} />
         })
         break
       default:
