@@ -90,7 +90,7 @@
     "TITLE": "Check my email address",
     "MESSAGE": "Enter the code received by email to validate your email address",
     "TOKEN_FIELD_LABEL": "Enter the code received by email",
-    "EMAIL_VERIFIED": "Your address has been verified.",
+    "EMAIL_VERIFIED": "Your account is ready!",
     "MISSING_TOKEN": "Code received by email is required",
     "ERROR_TOKEN_LENGTH": "Code received by email must contain 6 digits",
     "ACTION": "Resend verification code",
