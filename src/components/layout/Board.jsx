@@ -6,16 +6,16 @@ const Board = ({ children, title, subtitle }) => {
 
   return (
     <div id="layout-board">
-      <div className="board_head">
+       { title && <div className="board_head">
         <div>
           <SquareIcon />
           <h1>{ t(title) }</h1>
-        </div>
-        <div>
+        </div> 
+        { subtitle && <div>
           <span>{ subtitle.left }</span>
           <span>{ subtitle.rigth }</span>
-        </div>
-      </div>
+        </div>}
+      </div>}
       <div className="board_body">
         { children }
       </div>
