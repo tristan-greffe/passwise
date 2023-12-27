@@ -25,6 +25,13 @@ import UserIcon from './icons/user-icon.svg?react'
 import UserShieldIcon from './icons/user-shield-icon.svg?react'
 import EmailIcon from './icons/email-icon.svg?react'
 import CloseIcon from './icons/close-icon.svg?react'
+import FolderIcon from './icons/folder-icon.svg?react'
+import KeyIcon from './icons/key-icon.svg?react'
+import EarthIcon from './icons/earth-icon.svg?react'
+import PlusIcon from './icons/plus-icon.svg?react'
+import StarsIcon from './icons/stars-icon.svg?react'
+import ItemsIcon from './icons/items-icon.svg?react'
 
 export { Logo, LogoWhite, PasswiseInterface, heroWave, NavTopGreyWave, NavTopBlueWave, ArrowRightIcon, TurnOffIcon, MenuMobileIcon, CloseMobileIcon, DashboardIcon, FileIcon,
-  LogoutIcon, StarIcon, SettingsIcon, SquareIcon, PasswordIcon, PasswordPolicyIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, UserShieldIcon, EmailIcon, CloseIcon }
+  LogoutIcon, StarIcon, SettingsIcon, SquareIcon, PasswordIcon, PasswordPolicyIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, UserShieldIcon, EmailIcon, CloseIcon,
+  FolderIcon, KeyIcon, EarthIcon, PlusIcon, StarsIcon, ItemsIcon }

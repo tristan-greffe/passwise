@@ -1,5 +1,6 @@
 {
   "APPLY": "Appliquer",
+  "CREATE": "Créer",
   "CANCEL": "Annuler",
   "home": {
     "META_TITLE": "Gestionnaire de mots de passe sécurisé",
@@ -150,5 +151,24 @@
     "CONFIRMATION": "Saisissez l'email associé à votre compte pour confirmer la suprression",
     "SUCCESS_MESSAGE": "Votre compte a été supprimé",
     "ERROR_MESSAGE": "Impossible de supprimer votre compte, veuillez réessayer"
+  },
+  "vault": {
+    "META_TITLE": "Gestionnaire de mots de passe | Passwise",
+    "META_DESCRIPTION": "Découvrez comment gérer vos mots de passe en toute sécurité !",
+    "PASSWORD": "Mots de passe",
+    "CATEGORIE": "Catégorie",
+    "CATEGORIES": "Catégories",
+    "ITEMS": "Tous les éléments",
+    "FAVORITES": "Favoris"
+  },
+  "createCategorie": {
+    "TITLE": "Ajouter une catégorie",
+    "NAME_FIELD_LABEL": "Nom",
+    "MISSING_NAME": "Le nom est requis pour ajouter une catégorie",
+    "CATEGORY_ADDED": "Catégorie ajoutée",
+    "CATEGORY_ERROR_MESSAGE": "Erreur lors de l'ajout d'une catégorie"
+  },
+  "createPassword": {
+    "TITLE": "Ajouter un mot de passe"
   }
 }

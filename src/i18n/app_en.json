@@ -1,5 +1,6 @@
 {
   "APPLY": "Apply",
+  "CREATE": "Create",
   "CANCEL": "Cancel",
   "home": {
     "META_TITLE": "Secure password manager",
@@ -150,5 +151,24 @@
     "CONFIRMATION": "Enter your account email to confirm the deletion",
     "SUCCESS_MESSAGE": "Your account has been deleted",
     "ERROR_MESSAGE": "Unable to delete your account, please try again"
+  },
+  "vault": {
+    "META_TITLE": "Password manager | Passwise",
+    "META_DESCRIPTION": "Find out how to manage your passwords securely !",
+    "PASSWORD": "Passwords",
+    "CATEGORIE": "Categorie",
+    "CATEGORIES": "Categories",
+    "ITEMS": "All items",
+    "FAVORITES": "Favorites"
+  },
+  "createCategorie": {
+    "TITLE": "Add a category",
+    "NAME_FIELD_LABEL": "Name",
+    "MISSING_NAME": "The name is required to add a category",
+    "CATEGORY_ADDED": "Category added",
+    "CATEGORY_ERROR_MESSAGE": "Error adding category"
+  },
+  "createPassword": {
+    "TITLE": "Add password"
   }
 }

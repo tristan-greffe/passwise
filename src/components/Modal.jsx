@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 import { SquareIcon, CloseIcon } from '../assets'
 import { setModal } from '../store/componentSlice'
-import { settings } from './'
+import { settings, vault } from './'
 
 const Modal = () => {
   // Data
@@ -35,6 +35,20 @@ const Modal = () => {
           labelTitle: 'deleteAccountManager.TITLE',
           labelApplyButton: 'APPLY',
           component: <settings.DeleteAccountManager ref={componentRef} />
+        })
+        break
+      case 'create-categorie':
+        setModalContent({
+          labelTitle: 'createCategorie.TITLE',
+          labelApplyButton: 'CREATE',
+          component: <vault.CreateCategory ref={componentRef} />
+        })
+        break
+      case 'create-password':
+        setModalContent({
+          labelTitle: 'createPassword.TITLE',
+          labelApplyButton: 'CREATE',
+          component: <vault.CreatePassword ref={componentRef} />
         })
         break
       default:
