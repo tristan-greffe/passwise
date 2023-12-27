@@ -23,6 +23,8 @@ function createClient (config) {
 
   // Configure authentification
   api.configure(auth({
+    storage: window.localStorage,
+    storageKey: config.apiJwt || 'feathers-jwt',
     path: '/api/authentication'
   }))
 
