@@ -49,12 +49,12 @@ const EmailManager = forwardRef((props, ref) => {
   }
   function hasErrorModifyEmail () {
     // Check has password
-    if (!_.has(latestValuesRef.current, 'password')) {
+    if (!_.has(latestValuesRef.current, 'password') && latestValuesRef.current.password.length < 1) {
       toast.error(t('emailManager.MISSING_PASSWORD'))
       return true
     }
     // Check has email
-    if (!_.has(latestValuesRef.current, 'email')) {
+    if (!_.has(latestValuesRef.current, 'email') && latestValuesRef.current.email.length < 1) {
       toast.error(t('emailManager.MISSING_EMAIL'))
       return true
     }
