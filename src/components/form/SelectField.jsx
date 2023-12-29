@@ -7,7 +7,6 @@ function SelectField ({ properties, onChange }) {
   // fucntion
   function onFieldChanged (e) {
     e.preventDefault()
-    console.log(e.target.value)
     onChange(properties.id, e.target.value)
   }
 

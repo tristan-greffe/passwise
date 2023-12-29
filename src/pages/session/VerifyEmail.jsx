@@ -69,7 +69,6 @@ function VerifyEmail () {
       toast.success(t('verifyEmail.EMAIL_VERIFIED'))
       navigate('/dashboard')
     } catch (error) {
-      console.log(error)
       toast.error(t('verifyEmail.ERROR_MESSAGE'))
       dispatch(setLoader({ open: false }))
     }

@@ -52,7 +52,6 @@ const CreateCategory = forwardRef((props, ref) => {
       closeModal()
       toast.success(t('createCategorie.CATEGORY_ADDED'))
     } catch (error) {
-      console.log(error)
       dispatch(setLoader({ open: false }))
       toast.error(t('createCategorie.CATEGORY_ERROR_MESSAGE'))
     }
