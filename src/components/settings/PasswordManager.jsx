@@ -46,17 +46,17 @@ const PasswordManager = forwardRef((props, ref) => {
   }
   function hasError () {
     // Check has old password
-    if (!_.has(latestValuesRef.current, 'oldPassword')) {
+    if (!_.has(latestValuesRef.current, 'oldPassword') && latestValuesRef.current.oldPassword.length < 1) {
       toast.error(t('passwordManager.MISSING_OLD_PASSWORD'))
       return true
     }
     // Check has password
-    if (!_.has(latestValuesRef.current, 'newPassword')) {
+    if (!_.has(latestValuesRef.current, 'newPassword') && latestValuesRef.current.newPassword.length < 1) {
       toast.error(t('passwordManager.MISSING_PASSWORD'))
       return true
     }
     // Check has password confirmation
-    if (!_.has(latestValuesRef.current, 'passwordConfirmation')) {
+    if (!_.has(latestValuesRef.current, 'passwordConfirmation') && latestValuesRef.current.passwordConfirmation.length < 1) {
       toast.error(t('passwordManager.MISSING_PASSWORD_CONFIRMATION'))
       return true
     }

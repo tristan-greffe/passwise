@@ -39,7 +39,7 @@ const DeleteAccountManager = forwardRef((props, ref) => {
   }
   function hasError () {
     // Check has email
-    if (!_.has(latestValuesRef.current, 'email')) return true
+    if (!_.has(latestValuesRef.current, 'email') && latestValuesRef.current.email.length < 1) return true
     // Check email match
     if (latestValuesRef.current.email !== user.email) return true
     return false

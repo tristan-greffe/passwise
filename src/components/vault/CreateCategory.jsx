@@ -36,7 +36,7 @@ const CreateCategory = forwardRef((props, ref) => {
   }
   function hasError () {
     // Check name
-    if (!_.has(latestValuesRef.current, 'name')) {
+    if (!_.has(latestValuesRef.current, 'name') && latestValuesRef.current.name.length < 1) {
       toast.error(t('createCategorie.MISSING_NAME'))
       return true
     }
