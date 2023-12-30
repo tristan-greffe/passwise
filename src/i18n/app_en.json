@@ -163,12 +163,23 @@
   },
   "createCategorie": {
     "TITLE": "Add a category",
-    "NAME_FIELD_LABEL": "Name",
+    "NAME_FIELD_LABEL": "Name *",
     "MISSING_NAME": "The name is required to add a category",
     "CATEGORY_ADDED": "Category added",
     "CATEGORY_ERROR_MESSAGE": "Error adding category"
   },
   "createPassword": {
-    "TITLE": "Add password"
+    "TITLE": "Add password",
+    "NO_FOLDER": "No folder",
+    "NAME_FIELD_LABEL": "Name *",
+    "FOLDER_FIELD_LABEL": "Folder",
+    "LOGIN_FIELD_LABEL": "Login",
+    "PASSWORD_FIELD_LABEL": "Password *",
+    "URL_FIELD_LABEL": "URL",
+    "NOTE_FIELD_LABEL": "Note",
+    "MISSING_NAME": "The name is required to add a password",
+    "MISSING_PASSWORD": "Password is required",
+    "PASSWORD_ADDED": "Password added",
+    "PASSWORD_ERROR_MESSAGE": "Error adding password"
   }
 }
