@@ -34,7 +34,7 @@
   <img src="./readme_assets/passwise-interface.png" height="auto" width="90%"/>
 </div>
 
-**Open source password manager with zero-knowledge encryption**, based on the **[FeathersJS](https://feathersjs.com/)** & **[ReactJS](https://react.dev/)** frameworks.
+**Open source password manager**, based on the **[FeathersJS](https://feathersjs.com/)** & **[ReactJS](https://react.dev/)** frameworks.
 
 ### Tech Stack
 
@@ -68,25 +68,6 @@ cd passwise
 yarn install
 yarn dev
 ```
-
-### Testing
-
-#### API
-From the root folder run the server-side tests:
-
-```sh
-$yarn test:server
-```
-⚠️ To run the server-side tests, the server must not be running.
-
-#### Client
-From the root folder run the client-side tests:
-
-```sh
-$yarn test:client
-```
-
-⚠️ To run the client-side tests, you must first run the web app.
 
 ## Contributing
 
