@@ -119,7 +119,7 @@ function Signup () {
       dispatch(setLoader({ open: false }))
       navigate('/verify-email')
     } catch (error) {
-      toast.error(error.data.translationKey ? t('signup.' + error.data.translationKey) : t('signup.REGISTER_ERROR'))
+      toast.error(_.has(error.data, 'translationKey') ? t('signup.' + error.data.translationKey) : t('signup.REGISTER_ERROR'))
       dispatch(setLoader({ open: false }))
     }
   }

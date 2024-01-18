@@ -1,6 +1,5 @@
 import Logo from './logo.svg?react'
 import LogoWhite from './logo-white.svg'
-import PasswiseInterface from './passwise-interface.png'
 // Waves
 import heroWave from './wave/hero-wave.png'
 import NavTopGreyWave from './wave/nav-top-grey-wave.svg?react'
@@ -32,6 +31,6 @@ import PlusIcon from './icons/plus-icon.svg?react'
 import StarsIcon from './icons/stars-icon.svg?react'
 import ItemsIcon from './icons/items-icon.svg?react'
 
-export { Logo, LogoWhite, PasswiseInterface, heroWave, NavTopGreyWave, NavTopBlueWave, ArrowRightIcon, TurnOffIcon, MenuMobileIcon, CloseMobileIcon, DashboardIcon, FileIcon,
+export { Logo, LogoWhite, heroWave, NavTopGreyWave, NavTopBlueWave, ArrowRightIcon, TurnOffIcon, MenuMobileIcon, CloseMobileIcon, DashboardIcon, FileIcon,
   LogoutIcon, StarIcon, SettingsIcon, SquareIcon, PasswordIcon, PasswordPolicyIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, UserShieldIcon, EmailIcon, CloseIcon,
   FolderIcon, KeyIcon, EarthIcon, PlusIcon, StarsIcon, ItemsIcon }

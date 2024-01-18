@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Meta, Header } from '../components'
-import { heroWave, ArrowRightIcon, PasswiseInterface } from '../assets'
+import { heroWave, ArrowRightIcon } from '../assets'
 
 function Home () {
   const { t } = useTranslation()
@@ -27,9 +27,6 @@ function Home () {
                 </Link>
               </div>
               <div className="images col-span-full mb-6 lg:absolute lg:right-0 lg:-top-[150px] lg:col-start-6 lg:col-end-13 lg:w-[66%]">
-                <div className="grid">
-                  <img alt="Passwise Interface Hero" src={PasswiseInterface}  style={{translate: 'none', rotate: 'none', scale: 'none', opacity: '1', transform: 'translate(0%, 10%) translate3d(0px, 0px, 0px)'}} />
-                </div>
               </div>
             </div>
             <div className="col-start-2 col-end-5 mb-13 md:col-start-5 md:col-end-10 lg:col-start-4 lg:col-end-8 lg:mb-19">
