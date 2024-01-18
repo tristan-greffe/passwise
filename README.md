@@ -6,11 +6,8 @@
   ![Project Banner](./readme_assets/readme_banner.png)
 
   <p>
-    <a href="https://codeclimate.com/github/tristan-greffe/passwise/coverage">
-      <img src="https://codeclimate.com/github/tristan-greffe/passwise/badges/coverage.svg" alt="coverage" />
-    </a>
-    <a href="https://codeclimate.com/github/tristan-greffe/passwise">
-      <img src="https://codeclimate.com/github/tristan-greffe/passwise/badges/gpa.svg" alt="maintainability" />
+    <a href="https://github.com/tristan-greffe/passwise">
+      <img src="https://awesome.re/badge.svg" alt="awesome" />
     </a>
     <a href="https://github.com/tristan-greffe/passwise/stargazers">
       <img src="https://img.shields.io/github/stars/tristan-greffe/passwise" alt="stars" />
@@ -38,7 +35,7 @@
 
 ### Tech Stack
 
-[![My Skills](https://skillicons.dev/icons?i=js,nodejs,react,mongo,jest,sass,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,nodejs,react,mongo,sass,tailwind)](https://skillicons.dev)
 
 ## Getting Started
 
