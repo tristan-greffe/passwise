@@ -52,7 +52,9 @@
 
 #### Step 2: installing
 
-```sh
+##### From source code
+
+```bash
 git clone https://github.com/tristan-greffe/passwise.git
 
 // Run the server/API
@@ -64,6 +66,24 @@ yarn dev
 cd passwise
 yarn install
 yarn dev
+```
+
+Then point your browser to localhost:8080.
+
+##### Using Docker
+
+```bash
+// Retrieve the latest available dev tag
+docker pull codask/passwise:dev
+
+// Run the MongoDB and passwise containers
+docker-compose up -d
+
+// Stop the MongoDB and passwise containers
+docker-compose down
+
+// Stop the MongoDB and passwise containers erasing DB data
+docker-compose down -v
 ```
 
 ## Contributing
