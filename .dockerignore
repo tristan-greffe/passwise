@@ -1,0 +1,8 @@
+.git
+node_modules
+dist
+dist-ssr
+dev-dist
+api/node_modules
+api/dist
+api/logs
