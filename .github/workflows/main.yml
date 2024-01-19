@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: yarn
+        run: |
+          yarn
+          cd api
+          yarn
+          cd ..
       - name: Build & deploy
         run: bash ./.github/workflows/build.sh
