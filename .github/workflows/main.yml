@@ -1,0 +1,21 @@
+name: Build & Deploy
+on: [push]
+env:
+  TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+
+jobs:
+  build:
+    if: ${{ !contains(github.event.head_commit.message, '[skip app]') }}
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      GMAIL_PASWORD: ${{ secrets.GMAIL_PASWORD }}
+      GMAIL_USER: ${{ secrets.GMAIL_USER }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses:  actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Build & deploy
+        run: bash ./.github/workflows/build.sh
