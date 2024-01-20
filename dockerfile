@@ -4,7 +4,8 @@ FROM node:18-bullseye-slim
 WORKDIR /usr/src/app
 # Copy application files into the container
 COPY . .
-
+RUN yarn
+RUN yarn build
 WORKDIR /usr/src/app/api 
 RUN yarn
 
