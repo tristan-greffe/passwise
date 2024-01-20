@@ -1,7 +1,12 @@
 FROM node:18-bullseye-slim
 
+# Create a directory for the application in the container
 WORKDIR /usr/src/app
+# Copy application files into the container
 COPY . .
+
+WORKDIR /usr/src/app/api 
+RUN yarn
 
 ARG APP
 ARG FLAVOR
