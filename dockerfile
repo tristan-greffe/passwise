@@ -16,5 +16,6 @@ ENV NODE_APP_INSTANCE=$FLAVOR
 
 # Run the app
 WORKDIR /opt/passwise
+RUN ls /opt/passwise
 EXPOSE 8081
 CMD [ "yarn", "prod" ]
