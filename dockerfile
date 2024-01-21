@@ -4,11 +4,16 @@ FROM node:18-bullseye-slim
 COPY passwise.tgz /opt/.
 WORKDIR /opt
 RUN tar zxf passwise.tgz && rm passwise.tgz
-RUN chmod +x /opt/passwise/passwise
-WORKDIR /opt/passwise/passwise
+
+RUN ls /
 RUN ls /opt/passwise
 RUN ls /opt
-RUN /opt/passwise/passwise
+RUN ls /opt/passwise/passwise
+
+
+RUN chmod +x /opt/passwise/passwise
+WORKDIR /opt/passwise/passwise
+
 # Configue the required env
 ARG APP
 ARG FLAVOR
