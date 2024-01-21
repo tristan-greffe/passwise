@@ -63,5 +63,4 @@ yarn
 cd api
 yarn
 cd ..
-ls
 echo "##[endgroup]"
