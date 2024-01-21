@@ -4,6 +4,7 @@ FROM node:18-bullseye-slim
 COPY passwise.tgz /opt/.
 WORKDIR /opt
 RUN tar zxf passwise.tgz && rm passwise.tgz
+RUN chmod +x /opt/passwise/passwise
 WORKDIR /opt/passwise/passwise
 RUN ls /opt/passwise
 RUN ls /opt
