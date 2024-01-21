@@ -6,6 +6,7 @@ WORKDIR /opt
 RUN tar zxf passwise.tgz && rm passwise.tgz
 
 RUN ls /
+RUN ls /opt
 RUN ls /opt/passwise
 RUN ls /opt
 RUN ls /opt/passwise/passwise
