@@ -1,12 +1,9 @@
 FROM node:18-bullseye-slim
 
 # Copy the built artefact.
-RUN ls
 COPY passwise.tgz /opt/.
-
-RUN ls /opt
 WORKDIR /opt
-RUN tar zxf passwise.tgz && rm passwise.tgz
+RUN tar zxf passwise.tgz -C passwise && rm passwise.tgz
 
 RUN ls /
 RUN ls /opt
