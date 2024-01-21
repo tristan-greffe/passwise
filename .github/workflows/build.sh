@@ -20,7 +20,7 @@ check_code $? 0 "Connecting to Docker"
 
 # Create an archive to speed docker build process
 cd ..
-tar -zcf $GITHUB_WORKSPACE/$GITHUB_WORKSPACE.tgz $GITHUB_WORKSPACE
+tar -zcf $GITHUB_WORKSPACE.tgz -C $GITHUB_WORKSPACE .
 
 # Build the image
 cd $GITHUB_WORKSPACE
