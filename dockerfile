@@ -1,15 +1,9 @@
 FROM node:18-bullseye-slim
 
-# Create a directory for the application in the container
-WORKDIR /passwise
-# Copy application files into the container
-COPY . .
-
-# Install dependencies
-RUN yarn
-RUN yarn build
-WORKDIR /passwise/api 
-RUN yarn
+# Copy the built artefact.
+COPY passwise.tgz /opt/.
+WORKDIR /opt
+RUN tar zxf passwise.tgz && rm passwise.tgz
 
 # Configue the required env
 ARG APP
