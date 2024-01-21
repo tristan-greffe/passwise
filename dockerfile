@@ -1,14 +1,17 @@
 FROM node:18-bullseye-slim
 
 # Create a directory for the application in the container
-WORKDIR /usr/src/app
+WORKDIR /passwise
 # Copy application files into the container
 COPY . .
+
+# Install dependencies
 RUN yarn
 RUN yarn build
-WORKDIR /usr/src/app/api 
+WORKDIR /passwise/api 
 RUN yarn
 
+# Configue the required env
 ARG APP
 ARG FLAVOR
 ARG BUILD_NUMBER
