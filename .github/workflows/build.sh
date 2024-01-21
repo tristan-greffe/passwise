@@ -24,6 +24,8 @@ tar -zcf $GITHUB_WORKSPACE/$GITHUB_WORKSPACE.tgz $GITHUB_WORKSPACE
 
 # Build the image
 cd $GITHUB_WORKSPACE
+echo "Contents of directory before creating archive:"
+ls
 docker build --build-arg APP=$APP --build-arg FLAVOR=$FLAVOR --build-arg BUILD_NUMBER=$GITHUB_RUN_NUMBER -f dockerfile -t codask/$APP:$TAG . 
 check_code $? 0 "Building the app docker image"
 
