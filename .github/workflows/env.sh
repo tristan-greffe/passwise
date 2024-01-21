@@ -58,4 +58,10 @@ echo "Build flavor is $FLAVOR on branch ${GITHUB_REF##*/}"
 export GMAIL_USER=$GMAIL_USER
 export GMAIL_PASWORD=$GMAIL_PASWORD
 
+# Install dependencies
+yarn
+cd api
+yarn
+cd ..
+ls
 echo "##[endgroup]"

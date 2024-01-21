@@ -18,10 +18,12 @@ check_code $EXIT_CODE 0 "Builing the client"
 docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
 check_code $? 0 "Connecting to Docker"
 
+# Create an archive to speed docker build process
+cd ..
+tar -zcf $GITHUB_WORKSPACE $GITHUB_WORKSPACE
+ls
 # Build the image
 cd $GITHUB_WORKSPACE
-cd ..
-ls
 docker build --build-arg APP=$APP --build-arg FLAVOR=$FLAVOR --build-arg BUILD_NUMBER=$GITHUB_RUN_NUMBER -f dockerfile -t codask/$APP:$TAG . 
 check_code $? 0 "Building the app docker image"
 
