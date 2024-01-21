@@ -1,19 +1,9 @@
 FROM node:18-bullseye-slim
 
 # Copy the built artefact.
-COPY passwise.tgz /opt/.
-WORKDIR /opt
-RUN tar zxf passwise.tgz -C passwise && rm passwise.tgz
-
-RUN ls /
-RUN ls /opt
-RUN ls /opt/passwise
-RUN ls /opt
-RUN ls /opt/passwise/passwise
-
-
-RUN chmod +x /opt/passwise/passwise
-WORKDIR /opt/passwise/passwise
+COPY passwise.tgz /opt/passwise/.
+WORKDIR /opt/passwise
+RUN tar zxf passwise.tgz && rm passwise.tgz
 
 # Configue the required env
 ARG APP
