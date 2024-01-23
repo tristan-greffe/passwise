@@ -4,6 +4,7 @@ FROM node:18-bullseye-slim
 COPY passwise.tgz /opt/.
 WORKDIR /opt
 RUN mkdir -p passwise
+RUN tar tzvf passwise.tgz
 RUN tar zxf passwise.tgz -C passwise && rm passwise.tgz
 
 # Configue the required env
