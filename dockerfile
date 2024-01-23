@@ -16,7 +16,8 @@ WORKDIR /opt
 RUN mkdir -p passwise
 
 # Extract the contents of the tgz into the passwise directory.
-RUN tar zxf passwise.tgz -C passwise && rm passwise.tgz
+RUN tar zxf passwise.tgz --strip-components=1 -C passwise && rm passwise.tgz
+
 
 RUN ls -al /opt/passwise
 
