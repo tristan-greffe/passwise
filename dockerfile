@@ -15,11 +15,11 @@ COPY passwise.tgz /opt/.
 WORKDIR /opt
 RUN mkdir -p passwise && chown -R node:node passwise
 
-# Switch to the node user.
-USER node
-
 # Extract the contents of the tgz into the passwise directory.
 RUN tar zxf passwise.tgz --strip-components=1 -C passwise && rm passwise.tgz
+
+# Switch to the node user.
+USER node
 
 # Run the app
 WORKDIR /opt/passwise
