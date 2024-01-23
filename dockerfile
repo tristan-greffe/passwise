@@ -18,9 +18,11 @@ RUN mkdir -p passwise
 # Extract the contents of the tgz into the passwise directory.
 RUN tar zxf passwise.tgz -C passwise && rm passwise.tgz
 
+RUN ls -al /opt/passwise
+
 # Run the app
 WORKDIR /opt/passwise
-RUN ls /opt/passwise
+RUN ls -al /opt/passwise
 
 EXPOSE 8081
 CMD [ "yarn", "prod" ]
