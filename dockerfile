@@ -17,13 +17,13 @@ RUN mkdir -p passwise && chown -R node:node passwise
 
 # Extract the contents of the tgz into the passwise directory.
 RUN tar zxf passwise.tgz --strip-components=1 -C passwise && rm passwise.tgz
+RUN ls  /opt/passwise/passwise
 
 # Switch to the node user.
 USER node
 
 # Run the app
-WORKDIR /opt/passwise
-RUN ls -al /opt/passwise
+WORKDIR /opt/passwise/passwise
 
 EXPOSE 8081
 CMD [ "yarn", "prod" ]
