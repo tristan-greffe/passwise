@@ -10,18 +10,9 @@ source ./.github/workflows/env.sh
 #
 echo "##[group]Build"
 
-yarn build
-EXIT_CODE=$? 
-check_code $EXIT_CODE 0 "Builing the client" 
-
 # Log in to docker before building the app because of rate limiting
 docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
 check_code $? 0 "Connecting to Docker"
-
-# Create an archive to speed docker build process
-cd ..
-tar -zcf $GITHUB_WORKSPACE.tgz $GITHUB_WORKSPACE
-mv $GITHUB_WORKSPACE.tgz $GITHUB_WORKSPACE
 
 # Build the image
 cd $GITHUB_WORKSPACE

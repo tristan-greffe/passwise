@@ -53,14 +53,4 @@ export NODE_APP_INSTANCE=$FLAVOR
 TAG=$VERSION-$FLAVOR
 
 echo "Build flavor is $FLAVOR on branch ${GITHUB_REF##*/}"
-
-# Configue the required env
-export GMAIL_USER=$GMAIL_USER
-export GMAIL_PASWORD=$GMAIL_PASWORD
-
-# Install dependencies
-yarn
-cd api
-yarn
-cd ..
 echo "##[endgroup]"

@@ -1,7 +1,7 @@
-FROM node:18-bullseye-slim
+FROM node:18-bullseye-slim as Builder
+LABEL maintainer="boilerplate.js@gmail.com"
 
-# Configure the required env
-ARG APP
+# Configure env
 ARG FLAVOR
 ARG BUILD_NUMBER
 
@@ -9,16 +9,25 @@ ENV BUILD_NUMBER=$BUILD_NUMBER
 ENV NODE_APP_INSTANCE=$FLAVOR
 
 # Copy the built artefact.
-COPY passwise.tgz /opt/.
+# Warning - 
+# We could do ADD and let Docker uncompress automatically the archive but we reach log limit in Travis.
+# So we copy the archive and uncompress it using tar without the verbose mode
+COPY passwise /opt/.
+WORKDIR /opt/passwise
+RUN yarn && cd api && yarn && cd .. && yarn build
 
-# Create the destination directory with proper permissions.
-WORKDIR /opt
-RUN mkdir -p passwise && chown -R node:node passwise
+FROM node:18-bullseye-slim
+LABEL maintainer="boilerplate.js@gmail.com"
 
-# Extract the contents of the tgz into the passwise directory.
-RUN tar zxf passwise.tgz --strip-components=1 -C passwise && rm passwise.tgz
-RUN ls  /opt/passwise
+# Configure env
+ARG APP
+ARG FLAVOR
+ARG BUILD_NUMBER
 
+ENV BUILD_NUMBER=$BUILD_NUMBER
+ENV NODE_APP_INSTANCE=$FLAVOR
+
+COPY --from=Builder --chown=node:node /opt/passwise /opt/passwise
 # Switch to the node user.
 USER node
 
