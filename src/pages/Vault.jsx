@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import _ from 'lodash'
@@ -19,9 +19,9 @@ const Vault = () => {
   useEffect(() => {
     console.log(pathname)
     async function fetchInitialState () {
-      let data = await api.service('api/categories').find({ query: { userId: user._id }})
+      let data = await api.service('api/categories').find({ query: { userId: user._id } })
       setCategories(data.data)
-      data = await api.service('api/passwords').find({ query: { userId: user._id }})
+      data = await api.service('api/passwords').find({ query: { userId: user._id } })
       setPasswords(data.data)
     }
     fetchInitialState()
@@ -29,15 +29,15 @@ const Vault = () => {
 
   return (
     <>
-      <Meta title="vault.META_TITLE" description="vault.META_DESCRIPTION" />
+      <Meta title='vault.META_TITLE' description='vault.META_DESCRIPTION' />
       <layout.Layout>
-        <layout.Board >
-          <div id="vault-categories">
-            <div className="vault_head">
+        <layout.Board>
+          <div id='vault-categories'>
+            <div className='vault_head'>
               <SquareIcon />
               {t('vault.CATEGORIES')}
             </div>
-            <div className="vault-categories_body">
+            <div className='vault-categories_body'>
               <div>
                 <ItemsIcon />
                 <span>{t('vault.ITEMS')}</span>
@@ -51,24 +51,24 @@ const Vault = () => {
                   <FolderIcon />
                   <span>{category.name}</span>
                 </div>
-              ))}              
+              ))}
             </div>
           </div>
-          <div id="vault-elements">
-            <div className="vault_head">
+          <div id='vault-elements'>
+            <div className='vault_head'>
               <KeyIcon />
               {t('vault.PASSWORD')}
             </div>
-            <div className="vault-elements_body">
+            <div className='vault-elements_body'>
               {passwords.map((password, index) => (
                 <div key={index}>
                   <div>
                     <div><div>{_.first(password.name)}</div></div>
                     <span>{password.name}</span>
                   </div>
-                  <div className="file-actions">
-                    <div className="action-container type-container unselectable"><UserIcon /></div>
-                    <div className="action-container type-container unselectable"><KeyIcon /></div>
+                  <div className='file-actions'>
+                    <div className='action-container type-container unselectable'><UserIcon /></div>
+                    <div className='action-container type-container unselectable'><KeyIcon /></div>
                   </div>
                 </div>
               ))}

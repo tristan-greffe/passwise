@@ -34,7 +34,7 @@ const EmailManager = forwardRef((props, ref) => {
       component: 'TokenField'
     }
   ]
-  
+
   // Hooks
   useEffect(() => {
     latestValuesRef.current = values
@@ -44,7 +44,7 @@ const EmailManager = forwardRef((props, ref) => {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasErrorModifyEmail () {
@@ -83,9 +83,9 @@ const EmailManager = forwardRef((props, ref) => {
           setStep(2)
         } catch (error) {
           dispatch(setLoader({ open: false }))
-          toast.error(error.data.translationKey ? t('signup.'+ error.data.translationKey) : t('emailManager.PASSWORD_ERROR_MESSAGE'))
+          toast.error(error.data.translationKey ? t('signup.' + error.data.translationKey) : t('emailManager.PASSWORD_ERROR_MESSAGE'))
         }
-        break 
+        break
       case 2:
         if (hasErrorValidateEmail()) return
         try {
@@ -98,16 +98,17 @@ const EmailManager = forwardRef((props, ref) => {
           dispatch(setLoader({ open: false }))
           toast.error(t('emailManager.ERROR_MESSAGE'))
         }
+        break
       default:
-        break 
+        break
     }
   }
 
   // Expose apply function through the ref
-  useImperativeHandle(ref, () => ({ apply: apply }))
+  useImperativeHandle(ref, () => ({ apply }))
 
   return (
-    <Form fields={step === 1 ? modifyEmailFields : validateEmailFields} onSubmit={apply} onFieldChanged={onFieldChanged} /> 
+    <Form fields={step === 1 ? modifyEmailFields : validateEmailFields} onSubmit={apply} onFieldChanged={onFieldChanged} />
   )
 })
 

@@ -11,7 +11,7 @@ const Modal = () => {
   const dispatch = useDispatch()
   const componentRef = useRef()
   const { modalConstructionKey } = useSelector((state) => state.component.modal)
-  const [modalContent, setModalContent] = useState({ labelTitle: '', labelApplyButton: '', component: null } )
+  const [modalContent, setModalContent] = useState({ labelTitle: '', labelApplyButton: '', component: null })
 
   // Hook
   useEffect(() => {
@@ -52,33 +52,33 @@ const Modal = () => {
         })
         break
       default:
-        break 
+        break
     }
   }, [modalConstructionKey])
 
   // Functions
   const closeModal = () => { dispatch(setModal({ open: false, modalConstructionKey: '' })) }
-  const applySettings = () => { 
+  const applySettings = () => {
     // Invoke apply function from component
     componentRef.current.apply()
   }
 
   return (
-    <div id="modal">
+    <div id='modal'>
       <div>
         <CloseIcon onClick={closeModal} />
-        <div className="modal_wrap">
-          <div className="modal_head">
+        <div className='modal_wrap'>
+          <div className='modal_head'>
             <SquareIcon />
-            { t(modalContent.labelTitle) }
+            {t(modalContent.labelTitle)}
           </div>
-          <div className="modal_body">
+          <div className='modal_body'>
             {modalContent.component}
           </div>
-          <div className="modal_foot">
-            <button onClick={applySettings}>{ t(modalContent.labelApplyButton) }</button>
+          <div className='modal_foot'>
+            <button onClick={applySettings}>{t(modalContent.labelApplyButton)}</button>
             <button onClick={closeModal}>
-              { t('CANCEL') }
+              {t('CANCEL')}
               <CloseIcon />
             </button>
           </div>

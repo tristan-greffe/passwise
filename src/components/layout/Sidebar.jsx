@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { api } from '../../api'
 import { FolderIcon, SquareIcon, StarsIcon, ItemsIcon } from '../../assets'
 
-const Layout = () => { 
+const Layout = () => {
   // Data
   const { t } = useTranslation()
   const [categories, setCategories] = useState([])
@@ -12,7 +12,7 @@ const Layout = () => {
 
   // Functions
   async function fetchInitialState () {
-    const data = await api.service('api/categories').find({ query: { userId: user._id }})
+    const data = await api.service('api/categories').find({ query: { userId: user._id } })
     setCategories(data.data)
   }
 
@@ -23,11 +23,11 @@ const Layout = () => {
 
   return (
     <div id='layout-sidebar'>
-      <div className="sidebar_head">
+      <div className='sidebar_head'>
         <SquareIcon />
         {t('vault.CATEGORIES')}
       </div>
-      <div className="sidebar_body">
+      <div className='sidebar_body'>
         <div>
           <ItemsIcon />
           <span>{t('vault.ITEMS')}</span>

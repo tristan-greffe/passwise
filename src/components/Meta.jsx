@@ -6,8 +6,8 @@ function Meta ({ title, description }) {
 
   return (
     <Helmet>
-      <title>{ t(title) }</title>
-      <meta name="description" content={t(description)} />
+      <title>{t(title)}</title>
+      <meta name='description' content={t(description)} />
     </Helmet>
   )
 }

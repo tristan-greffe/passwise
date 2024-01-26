@@ -1,6 +1,6 @@
-var path = require('path')
-var fs = require('fs')
-var containerized = require('containerized')()
+const path = require('path')
+const fs = require('fs')
+const containerized = require('containerized')()
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
@@ -24,7 +24,7 @@ if (process.env.NODE_APP_INSTANCE === 'dev') {
 }
 
 module.exports = {
-  origins: [ domain ],
+  origins: [domain],
   apiPath: API_PREFIX,
   paginate: { default: 10, max: 50 },
   mongodb: containerized ? 'mongodb://mongodb:27017/passwise' : 'mongodb://127.0.0.1:27017/passwise',
@@ -79,8 +79,8 @@ module.exports = {
     oauth: {
       google: {
         key: process.env.GOOGLE_CLIENT_ID,
-        secret: process.env.GOOGLE_CLIENT_SECRET,
-      },
+        secret: process.env.GOOGLE_CLIENT_SECRET
+      }
     }
   }
 }

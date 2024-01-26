@@ -31,7 +31,7 @@ const CreateCategory = forwardRef((props, ref) => {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -47,7 +47,7 @@ const CreateCategory = forwardRef((props, ref) => {
     if (hasError()) return
     try {
       dispatch(setLoader({ open: true }))
-      await api.service('api/categories').create({userId: user._id, name: latestValuesRef.current.name})
+      await api.service('api/categories').create({ userId: user._id, name: latestValuesRef.current.name })
       dispatch(setLoader({ open: false }))
       closeModal()
       toast.success(t('createCategorie.CATEGORY_ADDED'))
@@ -58,8 +58,8 @@ const CreateCategory = forwardRef((props, ref) => {
   }
 
   // Expose apply function through the ref
-  useImperativeHandle(ref, () => ({ apply: apply }))
-  
+  useImperativeHandle(ref, () => ({ apply }))
+
   return (
     <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />
   )

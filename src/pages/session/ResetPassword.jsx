@@ -35,7 +35,7 @@ function ResetPassword () {
       id: 'token',
       label: 'resetPassword.TOKEN_FIELD_LABEL',
       component: 'TokenField'
-    },
+    }
   ]
   const data = {
     id: 'forgot-password-session',
@@ -57,7 +57,7 @@ function ResetPassword () {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -117,7 +117,7 @@ function ResetPassword () {
 
   return (
     <>
-      <Meta title="resetPassword.META_TITLE" description="resetPassword.META_DESCRIPTION" />
+      <Meta title='resetPassword.META_TITLE' description='resetPassword.META_DESCRIPTION' />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )

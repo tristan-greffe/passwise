@@ -1,4 +1,4 @@
-import { DashboardIcon, StarIcon, SettingsIcon, PasswordIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, EmailIcon, UserShieldIcon } from './assets'
+import { DashboardIcon, StarIcon, SettingsIcon, PasswordIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, EmailIcon, UserShieldIcon } from './assets'
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
@@ -19,7 +19,6 @@ if (process.env.NODE_APP_INSTANCE === 'dev') {
     domain = 'http://localhost:' + serverPort
   }
 }
-
 
 let origin
 process.env.NODE_ENV === 'development' ? origin = 'http://localhost:' + serverPort : origin = domain
@@ -54,13 +53,13 @@ const passwordSettings = {
       id: 'import-password',
       title: 'settings.IMPORT_PASSWORD_TITLE',
       description: 'settings.IMPORT_PASSWORD_DESCRIPTION',
-      Icon: ImportPasswordIcon,
+      Icon: ImportPasswordIcon
     },
     {
       id: 'export-password',
       title: 'settings.EXPORT_PASSWORD_TITLE',
       description: 'settings.EXPORT_PASSWORD_DESCRIPTION',
-      Icon: ExportPasswordIcon,
+      Icon: ExportPasswordIcon
     }
   ]
 }
@@ -73,17 +72,17 @@ const accountSettings = {
     {
       id: 'email-manager',
       title: 'settings.EMAIL_TITLE',
-      Icon: EmailIcon,
+      Icon: EmailIcon
     },
     {
       id: 'password-manager',
       title: 'settings.PASSWORD_TITLE',
-      Icon: PasswordIcon,
+      Icon: PasswordIcon
     },
     {
       id: 'delete-account-manager',
       title: 'settings.DELETE_ACCOUNT_TITLE',
-      Icon: UserShieldIcon,
+      Icon: UserShieldIcon
     }
   ]
 }

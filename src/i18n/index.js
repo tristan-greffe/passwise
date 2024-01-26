@@ -10,7 +10,7 @@ const locale = getLocale()
 i18n.use(initReactI18next)
   .init({
     resources: { en: { translation: translationEN }, fr: { translation: translationFR } },
-    lng: locale, 
+    lng: locale,
     fallbackLng: locale,
     interpolation: { escapeValue: false },
     react: { useSuspense: false }

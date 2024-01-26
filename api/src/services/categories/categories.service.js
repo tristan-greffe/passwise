@@ -8,6 +8,6 @@ export const category = (app) => {
     methods: ['find', 'create', 'patch', 'remove'],
     events: []
   })
-  
+
   app.service(categoryPath).hooks(categoryHooks)
 }

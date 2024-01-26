@@ -14,29 +14,32 @@ const Board = ({ children, title, subtitle }) => {
   const openModal = (modalConstructionKey) => { dispatch(setModal({ open: true, modalConstructionKey })) }
 
   return (
-    <div id="layout-board">
-       { title && <div className="board_head">
-        <div>
-          <SquareIcon />
-          <h1>{ t(title) }</h1>
-        </div> 
-        { subtitle && <div>
-          <span>{ subtitle.left }</span>
-          <span>{ subtitle.rigth }</span>
+    <div id='layout-board'>
+      {title &&
+        <div className='board_head'>
+          <div>
+            <SquareIcon />
+            <h1>{t(title)}</h1>
+          </div>
+          {subtitle &&
+            <div>
+              <span>{subtitle.left}</span>
+              <span>{subtitle.rigth}</span>
+            </div>}
         </div>}
-      </div>}
-      <div className="board_body">
-        { children }
+      <div className='board_body'>
+        {children}
       </div>
-      {pathname === '/vault' && <div className={`${action ? "board_action opened" : "board_action"}`}>
-        <div className="vault-action_btn" onClick={() => setAction(!action)}>
-          <PlusIcon />
-        </div>
-        <div className="vault-action_list">
-          <div onClick={() => openModal('create-password')}>{t('vault.PASSWORD')}</div>
-          <div onClick={() => openModal('create-categorie')}>{t('vault.CATEGORIE')}</div>
-        </div>
-      </div>}
+      {pathname === '/vault' &&
+        <div className={`${action ? 'board_action opened' : 'board_action'}`}>
+          <div className='vault-action_btn' onClick={() => setAction(!action)}>
+            <PlusIcon />
+          </div>
+          <div className='vault-action_list'>
+            <div onClick={() => openModal('create-password')}>{t('vault.PASSWORD')}</div>
+            <div onClick={() => openModal('create-categorie')}>{t('vault.CATEGORIE')}</div>
+          </div>
+        </div>}
     </div>
   )
 }

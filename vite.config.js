@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-import svgr from 'vite-plugin-svgr' 
+import svgr from 'vite-plugin-svgr'
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -13,7 +13,7 @@ export default ({ mode }) => {
     },
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src")
+        '@': path.resolve(__dirname, './src')
       }
     },
     server: {
@@ -21,13 +21,13 @@ export default ({ mode }) => {
       port: 8080
     },
     plugins: [
-      react(), 
-      svgr(), 
-      VitePWA({ 
+      react(),
+      svgr(),
+      VitePWA({
         devOptions: {
           enabled: true
         },
-        registerType: 'autoUpdate', 
+        registerType: 'autoUpdate',
         injectRegister: 'auto',
         manifest: {
           name: 'Passwise',

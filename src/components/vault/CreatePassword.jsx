@@ -46,7 +46,7 @@ const createPassword = forwardRef((props, ref) => {
       id: 'note',
       label: 'createPassword.NOTE_FIELD_LABEL',
       component: 'TextareaField'
-    },
+    }
   ]
 
   // Hooks
@@ -55,8 +55,8 @@ const createPassword = forwardRef((props, ref) => {
   }, [values])
   useEffect(() => {
     async function featchCategories () {
-      const data = await api.service('api/categories').find({ paginate: false, query: { userId: user._id }})
-      const transformedData =  data.data.map(category => {
+      const data = await api.service('api/categories').find({ paginate: false, query: { userId: user._id } })
+      const transformedData = data.data.map(category => {
         return { value: category._id, name: category.name }
       })
       transformedData.unshift({ value: '', name: t('createPassword.NO_FOLDER') })
@@ -68,7 +68,7 @@ const createPassword = forwardRef((props, ref) => {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
 
@@ -91,8 +91,8 @@ const createPassword = forwardRef((props, ref) => {
       dispatch(setLoader({ open: true }))
       const payload = {
         userId: user._id,
-        name: latestValuesRef.current.name, 
-        password: latestValuesRef.current.password,
+        name: latestValuesRef.current.name,
+        password: latestValuesRef.current.password
       }
       if (_.has(latestValuesRef.current, 'folder') && latestValuesRef.current.folder.length > 1) payload.categoryId = latestValuesRef.current.folder
       if (_.has(latestValuesRef.current, 'login') && latestValuesRef.current.login.length > 1) payload.login = latestValuesRef.current.login
@@ -109,8 +109,8 @@ const createPassword = forwardRef((props, ref) => {
   }
 
   // Expose apply function through the ref
-  useImperativeHandle(ref, () => ({ apply: apply }))
-  
+  useImperativeHandle(ref, () => ({ apply }))
+
   return (
     <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />
   )

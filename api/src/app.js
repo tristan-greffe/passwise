@@ -23,7 +23,7 @@ export async function runApplication () {
   app.use(express.json(_.get(bodyParserConfig, 'json')))
   app.use(express.urlencoded({ extended: true }))
   app.use(history())
-  
+
   // Set up plugins and providers
   app.configure(rest())
   app.configure(

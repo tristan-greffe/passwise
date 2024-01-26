@@ -1,7 +1,6 @@
 import { authenticate } from '@feathersjs/authentication'
 import { passwordHash } from '@feathersjs/authentication-local'
-import { resolve } from '@feathersjs/schema'
-import { hooks as schemaHooks } from '@feathersjs/schema'
+import { resolve, hooks as schemaHooks } from '@feathersjs/schema'
 import { validateUniqueEmail, enforcePasswordPolicy, removeVerification, addVerification, sendWelcomeEmail } from '../../hooks/hooks.users.js'
 
 export default {
@@ -18,7 +17,7 @@ export default {
     all: [],
     find: [],
     get: [],
-    create: [addVerification, enforcePasswordPolicy(), validateUniqueEmail(), schemaHooks.resolveData(resolve({ password: passwordHash({ strategy: 'local' })}))],
+    create: [addVerification, enforcePasswordPolicy(), validateUniqueEmail(), schemaHooks.resolveData(resolve({ password: passwordHash({ strategy: 'local' }) }))],
     patch: [],
     remove: []
   },

@@ -4,13 +4,13 @@ import TextField from './TextField'
 import PasswordField from './PasswordField'
 import TokenField from './TokenField'
 import TextareaField from './TextareaField'
-import SelectField from './SelectField' 
+import SelectField from './SelectField'
 
 function Form ({ fields, onFieldChanged, onSubmit, buttonLabel }) {
   const { t } = useTranslation()
 
   return (
-    <form className="mx-auto">
+    <form className='mx-auto'>
       {fields.map((field) => {
         if (field.component === 'TextField') {
           return (
@@ -28,16 +28,17 @@ function Form ({ fields, onFieldChanged, onSubmit, buttonLabel }) {
           return (
             <TextareaField key={field.id} properties={field} onChange={onFieldChanged} />
           )
-        }
-        else if (field.component === 'SelectField') {
+        } else if (field.component === 'SelectField') {
           return (
             <SelectField key={field.id} properties={field} onChange={onFieldChanged} />
           )
         }
+        return null
       })}
-      { buttonLabel && <div className="buttons mt-6">
-        <button onClick={onSubmit}>{ t(buttonLabel)}</button>
-      </div>}
+      {buttonLabel &&
+        <div className='buttons mt-6'>
+          <button onClick={onSubmit}>{t(buttonLabel)}</button>
+        </div>}
     </form>
   )
 }

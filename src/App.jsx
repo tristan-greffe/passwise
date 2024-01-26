@@ -10,8 +10,10 @@ import { setLoader } from './store/componentSlice'
 import { api, initializeApi } from './api'
 import config from './config.js'
 import { Toast, Loader, Modal } from './components'
-import { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
-  Dashboard, Vault, Settings } from './pages'
+import {
+  Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
+  Dashboard, Vault, Settings
+} from './pages'
 
 function App () {
   // Data
@@ -91,16 +93,16 @@ function App () {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Navigate to='/' replace />} />
-        <Route path="/" element={<PublicPageGuard user={user} from={'home'}><Home /></PublicPageGuard>} />
-        <Route path="/login" element={<PublicPageGuard user={user} from={'login'}><Login /></PublicPageGuard>} />
-        <Route path="/signup" element={<PublicPageGuard user={user} from={'signup'}><Signup /></PublicPageGuard>} />
-        <Route path="/forgot-password" element={<PublicPageGuard user={user} from={'forgot-password'}><ForgotPassword /></PublicPageGuard>} />
-        <Route path="/reset-password" element={<PublicPageGuard user={user} from={'reset-password'}><ResetPassword /></PublicPageGuard>} />
-        <Route path="/verify-email" element={<PublicPageGuard user={user} from={'verify-email'}><VerifyEmail /></PublicPageGuard>} />
-        <Route path="/dashboard" element={<PrivatePageGuard user={user}><Dashboard /></PrivatePageGuard>} />
-        <Route path="/vault" element={<PrivatePageGuard user={user}><Vault /></PrivatePageGuard>} />
-        <Route path="/settings" element={<PrivatePageGuard user={user}><Settings /></PrivatePageGuard>} />
+        <Route path='*' element={<Navigate to='/' replace />} />
+        <Route path='/' element={<PublicPageGuard user={user} from='home'><Home /></PublicPageGuard>} />
+        <Route path='/login' element={<PublicPageGuard user={user} from='login'><Login /></PublicPageGuard>} />
+        <Route path='/signup' element={<PublicPageGuard user={user} from='signup'><Signup /></PublicPageGuard>} />
+        <Route path='/forgot-password' element={<PublicPageGuard user={user} from='forgot-password'><ForgotPassword /></PublicPageGuard>} />
+        <Route path='/reset-password' element={<PublicPageGuard user={user} from='reset-password'><ResetPassword /></PublicPageGuard>} />
+        <Route path='/verify-email' element={<PublicPageGuard user={user} from='verify-email'><VerifyEmail /></PublicPageGuard>} />
+        <Route path='/dashboard' element={<PrivatePageGuard user={user}><Dashboard /></PrivatePageGuard>} />
+        <Route path='/vault' element={<PrivatePageGuard user={user}><Vault /></PrivatePageGuard>} />
+        <Route path='/settings' element={<PrivatePageGuard user={user}><Settings /></PrivatePageGuard>} />
       </Routes>
       <Toast />
       {loader.open && <Loader />}

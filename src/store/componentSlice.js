@@ -15,7 +15,7 @@ export const componentSlice = createSlice({
     },
     setLoader: (state, action) => {
       const { open } = action.payload
-      return { ...state, loader: { open }}
+      return { ...state, loader: { open } }
     }
   }
 })

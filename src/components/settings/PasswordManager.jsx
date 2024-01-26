@@ -41,7 +41,7 @@ const PasswordManager = forwardRef((props, ref) => {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -78,13 +78,13 @@ const PasswordManager = forwardRef((props, ref) => {
       toast.success(t('passwordManager.PASSWORD_CHANGED'))
     } catch (error) {
       dispatch(setLoader({ open: false }))
-      toast.error(error.data.translationKey ? t('signup.'+ error.data.translationKey) : t('passwordManager.PASSWORD_ERROR_MESSAGE'))
+      toast.error(error.data.translationKey ? t('signup.' + error.data.translationKey) : t('passwordManager.PASSWORD_ERROR_MESSAGE'))
     }
   }
 
   // Expose apply function through the ref
-  useImperativeHandle(ref, () => ({ apply: apply }))
-  
+  useImperativeHandle(ref, () => ({ apply }))
+
   return (
     <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />
   )

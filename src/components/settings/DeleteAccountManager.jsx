@@ -34,7 +34,7 @@ const DeleteAccountManager = forwardRef((props, ref) => {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -62,7 +62,7 @@ const DeleteAccountManager = forwardRef((props, ref) => {
   }
 
   // Expose apply function through the ref
-  useImperativeHandle(ref, () => ({ apply: apply }))
+  useImperativeHandle(ref, () => ({ apply }))
 
   return (
     <Form fields={fields} onSubmit={apply} onFieldChanged={onFieldChanged} />

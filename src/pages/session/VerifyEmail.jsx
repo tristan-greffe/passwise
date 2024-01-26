@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
-import { useSelector } from 'react-redux'
 import _ from 'lodash'
 import { verifySignup } from '../../utils/utils.account'
 import { setLoader } from '../../store/componentSlice'
@@ -40,7 +39,7 @@ function VerifyEmail () {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -63,7 +62,7 @@ function VerifyEmail () {
       dispatch(setLoader({ open: true }))
       await new Promise(resolve => setTimeout(resolve, 1000))
       await verifySignup(latestValuesRef.current.token, user.email)
-      dispatch(setUser({ ...user, isVerified: true}))
+      dispatch(setUser({ ...user, isVerified: true }))
       setValues({})
       dispatch(setLoader({ open: false }))
       toast.success(t('verifyEmail.EMAIL_VERIFIED'))
@@ -76,7 +75,7 @@ function VerifyEmail () {
 
   return (
     <>
-      <Meta title="verifyEmail.META_TITLE" description="verifyEmail.META_DESCRIPTION" />
+      <Meta title='verifyEmail.META_TITLE' description='verifyEmail.META_DESCRIPTION' />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )

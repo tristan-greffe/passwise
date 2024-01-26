@@ -37,7 +37,7 @@ function Signup () {
       id: 'passwordConfirmation',
       label: 'signup.CONFIRM_PASSWORD_FIELD_LABEL',
       component: 'PasswordField'
-    },
+    }
   ]
   const data = {
     id: 'register-session',
@@ -58,7 +58,7 @@ function Signup () {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -126,7 +126,7 @@ function Signup () {
 
   return (
     <>
-      <Meta title="signup.META_TITLE" description="signup.META_DESCRIPTION" />
+      <Meta title='signup.META_TITLE' description='signup.META_DESCRIPTION' />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )

@@ -24,7 +24,8 @@
     "dev": "cross-env NODE_ENV=development vite",
     "prod": "cd api && npm run prod",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "standard"
   },
   "dependencies": {
     "@feathersjs/authentication-client": "^5.0.12",
@@ -57,6 +58,7 @@
     "loglevel": "^1.8.1",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
+    "standard": "^17.1.0",
     "tailwindcss": "^3.3.6",
     "turbopack": "^0.0.1",
     "vite": "^5.0.8",

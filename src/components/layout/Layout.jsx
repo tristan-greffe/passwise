@@ -7,17 +7,17 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div id="main-layout">
+      <div id='main-layout'>
         <Navbar />
         <div>
           <header>
             <div>
-              <img src={LogoWhite} alt="logo" />
+              <img src={LogoWhite} alt='logo' />
             </div>
           </header>
           <main>
             {pathname === '/vault' && <Sidebar />}
-            { children }
+            {children}
           </main>
         </div>
       </div>

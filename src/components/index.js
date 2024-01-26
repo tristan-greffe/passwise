@@ -8,4 +8,4 @@ import * as layout from './layout'
 import * as settings from './settings'
 import * as vault from './vault'
 
-export { Meta, Toast, Loader, Modal, Header, LayoutSession, layout, settings, vault } 
+export { Meta, Toast, Loader, Modal, Header, LayoutSession, layout, settings, vault }

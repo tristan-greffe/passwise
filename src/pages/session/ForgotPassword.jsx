@@ -38,7 +38,7 @@ function ForgotPassword () {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -72,7 +72,7 @@ function ForgotPassword () {
 
   return (
     <>
-      <Meta title="forgotPassword.META_TITLE" description="forgotPassword.META_DESCRIPTION" />
+      <Meta title='forgotPassword.META_TITLE' description='forgotPassword.META_DESCRIPTION' />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )

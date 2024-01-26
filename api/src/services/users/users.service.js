@@ -8,6 +8,6 @@ export const user = (app) => {
     methods: ['find', 'create', 'patch', 'remove'],
     events: []
   })
-  
+
   app.service(userPath).hooks(userHooks)
 }

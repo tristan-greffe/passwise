@@ -36,4 +36,3 @@ export function initializeApi (config) {
   api = createClient(config)
   return api
 }
-

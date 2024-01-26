@@ -7,8 +7,10 @@ import ResetPassword from './session/ResetPassword'
 import VerifyEmail from './session/VerifyEmail'
 // Vault
 import Dashboard from './Dashboard'
-import Vault from './Vault' 
+import Vault from './Vault'
 import Settings from './Settings'
 
-export { Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
-  Dashboard, Vault, Settings }
+export {
+  Home, Login, Signup, ForgotPassword, ResetPassword, VerifyEmail,
+  Dashboard, Vault, Settings
+}

@@ -8,6 +8,6 @@ export const password = (app) => {
     methods: ['find', 'create', 'patch', 'remove'],
     events: []
   })
-  
+
   app.service(passwordPath).hooks(passwordHooks)
 }

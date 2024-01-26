@@ -9,9 +9,9 @@ const Settings = () => {
 
   return (
     <>
-      <Meta title="settings.META_TITLE" description="settings.META_DESCRIPTION" />
+      <Meta title='settings.META_TITLE' description='settings.META_DESCRIPTION' />
       <layout.Layout>
-        <layout.Board title='settings.TITLE' subtitle={{left: user.name, rigth: user.email}}>
+        <layout.Board title='settings.TITLE' subtitle={{ left: user.name, rigth: user.email }}>
           <settings.Section {...passwordSettings} />
           <settings.Section {...accountSettings} />
         </layout.Board>

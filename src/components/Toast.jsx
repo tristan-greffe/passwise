@@ -1,34 +1,34 @@
 import { Toaster } from 'react-hot-toast'
 
-function Toast ()  {
+function Toast () {
   return (
     <Toaster
-      position= 'bottom-left'
-      containerStyle={{zIndex: 99999}}
+      position='bottom-left'
+      containerStyle={{ zIndex: 99999 }}
       toastOptions={{
         duration: 10000,
         success: {
           style: {
             background: '#21ba45',
-            color: '#fff',
+            color: '#fff'
           },
           iconTheme: {
             primary: '#fff',
-            secondary: '#21ba45',
+            secondary: '#21ba45'
           }
         },
         error: {
           style: {
             background: '#c74a4a',
-            color: '#fff',
+            color: '#fff'
           },
           iconTheme: {
             primary: '#fff',
-            secondary: '#c74a4a',
+            secondary: '#c74a4a'
           }
         }
       }}
-    />      
+    />
   )
 }
 

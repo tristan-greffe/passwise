@@ -6,7 +6,7 @@ import { setModal } from '../../store/componentSlice'
 const SettingsCard = ({ id, title, description, Icon }) => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  
+
   const openModal = (modalConstructionKey) => { dispatch(setModal({ open: true, modalConstructionKey })) }
 
   if (_.endsWith(id, 'manager')) {
@@ -16,7 +16,7 @@ const SettingsCard = ({ id, title, description, Icon }) => {
         <div>
           <Icon />
         </div>
-        <b>{ t(title) }</b>
+        <b>{t(title)}</b>
       </div>
     )
   } else {
@@ -25,8 +25,8 @@ const SettingsCard = ({ id, title, description, Icon }) => {
       <div id={id} onClick={() => openModal(id)}>
         <Icon />
         <div>
-          <b>{ t(title) }</b>
-          <small>{ t(description) }</small>
+          <b>{t(title)}</b>
+          <small>{t(description)}</small>
         </div>
       </div>
     )
@@ -40,7 +40,7 @@ const SectionSettings = ({ id, title, IconTitle, content }) => {
     <section id={id}>
       <div>
         <IconTitle />
-        { t(title) }
+        {t(title)}
       </div>
       <div>
         {content.map((element) => (

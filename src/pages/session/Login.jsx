@@ -26,7 +26,7 @@ function Login () {
       id: 'password',
       label: 'login.PASSWORD_FIELD_LABEL',
       component: 'PasswordField'
-    },
+    }
   ]
   const data = {
     id: 'login-session',
@@ -47,7 +47,7 @@ function Login () {
   function onFieldChanged (field, value) {
     setValues((prevValues) => ({
       ...prevValues,
-      [field]: value,
+      [field]: value
     }))
   }
   function hasError () {
@@ -82,7 +82,7 @@ function Login () {
 
   return (
     <>
-      <Meta title="login.META_TITLE" description="login.META_DESCRIPTION" />
+      <Meta title='login.META_TITLE' description='login.META_DESCRIPTION' />
       <LayoutSession data={data} fields={fields} onSubmit={onSubmit} onFieldChanged={onFieldChanged} />
     </>
   )

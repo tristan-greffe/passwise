@@ -1,5 +1,5 @@
 import { when } from 'feathers-hooks-common'
-import { validateUniqueEmail, enforcePasswordPolicy  } from '../../hooks/hooks.users.js'
+import { validateUniqueEmail, enforcePasswordPolicy } from '../../hooks/hooks.users.js'
 
 export default {
   around: {
@@ -10,7 +10,7 @@ export default {
     find: [],
     get: [],
     create: [when(hook => hook.data.action === 'resetPwdShort' || hook.data.action === 'passwordChange', enforcePasswordPolicy()),
-             when(hook => hook.data.action === 'sendChangeIdentity', validateUniqueEmail())],
+      when(hook => hook.data.action === 'sendChangeIdentity', validateUniqueEmail())],
     patch: [],
     remove: []
   },

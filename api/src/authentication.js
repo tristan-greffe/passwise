@@ -10,6 +10,6 @@ export const authentication = (app) => {
   authentication.register('google', new OAuthStrategy())
 
   app.use('api/authentication', authentication)
-  
+
   app.configure(oauth())
 }

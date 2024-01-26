@@ -31,6 +31,8 @@ import PlusIcon from './icons/plus-icon.svg?react'
 import StarsIcon from './icons/stars-icon.svg?react'
 import ItemsIcon from './icons/items-icon.svg?react'
 
-export { Logo, LogoWhite, heroWave, NavTopGreyWave, NavTopBlueWave, ArrowRightIcon, TurnOffIcon, MenuMobileIcon, CloseMobileIcon, DashboardIcon, FileIcon,
+export {
+  Logo, LogoWhite, heroWave, NavTopGreyWave, NavTopBlueWave, ArrowRightIcon, TurnOffIcon, MenuMobileIcon, CloseMobileIcon, DashboardIcon, FileIcon,
   LogoutIcon, StarIcon, SettingsIcon, SquareIcon, PasswordIcon, PasswordPolicyIcon, ImportPasswordIcon, ExportPasswordIcon, AccountIcon, UserIcon, UserShieldIcon, EmailIcon, CloseIcon,
-  FolderIcon, KeyIcon, EarthIcon, PlusIcon, StarsIcon, ItemsIcon }
+  FolderIcon, KeyIcon, EarthIcon, PlusIcon, StarsIcon, ItemsIcon
+}
