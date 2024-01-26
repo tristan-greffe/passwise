@@ -8,13 +8,13 @@ ARG BUILD_NUMBER
 ENV BUILD_NUMBER=$BUILD_NUMBER
 ENV NODE_APP_INSTANCE=$FLAVOR
 
-# Copy the built artefact.
-# Warning - 
-# We could do ADD and let Docker uncompress automatically the archive but we reach log limit in Travis.
-# So we copy the archive and uncompress it using tar without the verbose mode
-COPY passwise /opt/.
+# Create a directory for the application in the container
 WORKDIR /opt/passwise
+# Copy application files into the container
+COPY . .
+# Install dependencies
 RUN yarn && cd api && yarn && cd .. && yarn build
+
 
 FROM node:18-bullseye-slim
 LABEL maintainer="boilerplate.js@gmail.com"
