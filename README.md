@@ -68,7 +68,8 @@ yarn install
 yarn dev
 ```
 
-Then point your browser to localhost:8080.
+> [!NOTE]
+> Then point your browser to localhost:8081
 
 ##### Using Docker
 
@@ -85,6 +86,9 @@ docker-compose down
 // Stop the MongoDB and passwise containers erasing DB data
 docker-compose down -v
 ```
+
+> [!NOTE]
+> Then point your browser to localhost:8081
 
 ## Contributing
 
