@@ -39,9 +39,7 @@
 
 ## Getting Started
 
-### Installing
-
-#### Step 1: set the required environment variables
+### Step 1: set the required environment variables
 
 | ENV | Description | Required |
 |---|---|---|
@@ -50,9 +48,9 @@
 | `GOOGLE_CLIENT_ID` | Customer ID for google authentication | no |
 | `GOOGLE_CLIENT_SECRET` | Customer secret key for google authentication | no |
 
-#### Step 2: installing
+### Step 2: installing
 
-##### From source code
+#### From source code
 
 ```bash
 git clone https://github.com/tristan-greffe/passwise.git
@@ -71,7 +69,7 @@ yarn dev
 > [!NOTE]
 > Then point your browser to localhost:8080
 
-##### Using Docker
+#### Using Docker
 
 ```bash
 // Retrieve the latest available dev tag
