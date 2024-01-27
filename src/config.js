@@ -6,7 +6,8 @@ const clientPort = process.env.CLIENT_PORT || 8080
 let domain
 // If we build a specific staging instance
 if (process.env.NODE_APP_INSTANCE === 'dev') {
-  domain = 'https://passwise.dev.tristan-greffe.xyz'
+  // domain = 'https://passwise.dev.tristan-greffe.xyz'
+  domain = 'http://localhost:' + serverPort
 } else if (process.env.NODE_APP_INSTANCE === 'test') {
   domain = 'https://passwise.test.tristan-greffe.xyz'
 } else if (process.env.NODE_APP_INSTANCE === 'prod') {
