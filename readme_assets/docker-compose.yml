@@ -4,9 +4,10 @@ services:
   passwise:
     image: codask/passwise:dev
     environment:
-      - DB_URL=mongodb://mongodb:27017/passwise
+      - GMAIL_USER=${GMAIL_USER}
+      - GMAIL_PASWORD=${GMAIL_PASWORD}
     ports:
-      - "8080:8081"
+      - "8081:8081"
     networks:
       - passwise
   mongodb:
