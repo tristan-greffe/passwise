@@ -28,7 +28,7 @@ module.exports = {
   apiPath: API_PREFIX,
   paginate: { default: 10, max: 50 },
   // mongodb: containerized ? 'mongodb://mongodb:27017/passwise' : 'mongodb://127.0.0.1:27017/passwise',
-  ongodb: 'mongodb://mongodb:27017/passwise',
+  mongodb: 'mongodb://mongodb:27017/passwise',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
   bodyParser: {
