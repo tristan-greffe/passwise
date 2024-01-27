@@ -69,7 +69,7 @@ yarn dev
 ```
 
 > [!NOTE]
-> Then point your browser to localhost:8081
+> Then point your browser to localhost:8080
 
 ##### Using Docker
 
