@@ -1,6 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-//const containerized = require('containerized')()
+// const containerized = require('containerized')()
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
@@ -27,7 +27,7 @@ module.exports = {
   origins: [domain],
   apiPath: API_PREFIX,
   paginate: { default: 10, max: 50 },
-  //mongodb: containerized ? 'mongodb://mongodb:27017/passwise' : 'mongodb://127.0.0.1:27017/passwise',
+  // mongodb: containerized ? 'mongodb://mongodb:27017/passwise' : 'mongodb://127.0.0.1:27017/passwise',
   ongodb: 'mongodb://mongodb:27017/passwise',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
