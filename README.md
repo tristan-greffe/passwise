@@ -35,7 +35,7 @@
 
 ### Tech Stack
 
-[![My Skills](https://skillicons.dev/icons?i=js,nodejs,react,mongo,sass,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,nodejs,react,mongo,sass,tailwind,docker,yarn)](https://skillicons.dev)
 
 ## Getting Started
 
