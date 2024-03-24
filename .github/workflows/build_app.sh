@@ -49,8 +49,12 @@ echo "::endgroup::"
 echo "::group::Setting up workspace ..."
 
 ls 
+echo "1"
 cd .. && ls 
+echo "2"
 cd .. && ls 
+echo "3"
+pwd
 THIS_FILE=$(readlink -f "${BASH_SOURCE[0]}")
 echo "$THIS_FILE"
 THIS_DIR=$(dirname "$THIS_FILE")
