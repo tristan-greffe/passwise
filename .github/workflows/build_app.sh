@@ -78,11 +78,11 @@ docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
 # DOCKER_BUILDKIT is here to be able to use Dockerfile specific dockerginore (app.Dockerfile.dockerignore)
 DOCKER_BUILDKIT=1 docker build \
   --build-arg APP="$APP" \
-  --build-arg FLAVOR="$FLAVOR" \
+  --build-arg FLAVOR="$APP_FLAVOR" \
   -f app.Dockerfile \
   -t "$IMAGE_NAME:$IMAGE_TAG" \
   "$WORKSPACE_DIR"
-docker tag "$IMAGE_NAME:$IMAGE_TAG" "$IMAGE_NAME:$FLAVOR"
+docker tag "$IMAGE_NAME:$IMAGE_TAG" "$IMAGE_NAME:$APP_FLAVOR"
 
 docker push "$IMAGE_NAME:$IMAGE_TAG"
 docker push "$IMAGE_NAME:$FLAVOR"
