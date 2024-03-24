@@ -2,29 +2,15 @@ name: Build & Deploy
 on: [push]
 
 jobs:
-  test:
-    if: ${{ !contains(github.event.head_commit.message, '[skip test]') }}
-    runs-on: ubuntu-latest
+  build_app:
+    name: Build app
+    if: ${{ !contains(github.event.head_commit.message, 'skip app') }}
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - uses:  actions/setup-node@v3
-        with:
-          node-version: '18.x'
-      - name: Run tests
-        run: |
-          yarn
-          yarn lint
-  build-push-container:
-    needs: test
-    if: ${{ !contains(github.event.head_commit.message, '[skip app]') }}
-    runs-on: ubuntu-latest
-    env:
-      DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses:  actions/setup-node@v3
-        with:
-          node-version: '18.x'
-      - name: Build & deploy
-        run: bash ./.github/workflows/build.sh
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Build app
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: bash ./scripts/build_app.sh ${{ github.job }}
