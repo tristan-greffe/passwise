@@ -14,10 +14,6 @@ NODE18_VERSION=18.19.1
 
 echo "::group::Init github for $JOB_ID"
 
-# Add ~/.local/bin to PATH
-mkdir -p "$HOME/.local/bin"
-export PATH=$PATH:$HOME/.local/bin
-
 # Make sure package lists are up to date
 sudo apt-get update && sudo apt-get --no-install-recommends --yes install curl git
 
@@ -48,27 +44,12 @@ echo "::endgroup::"
 
 echo "::group::Setting up workspace ..."
 
-ls 
-echo "1"
-cd .. && ls 
-echo "2"
-cd .. && ls 
-echo "3"
-pwd
-THIS_FILE=$(readlink -f "${BASH_SOURCE[0]}")
-echo "$THIS_FILE"
-THIS_DIR=$(dirname "$THIS_FILE")
-echo "$THIS_DIR"
-ROOT_DIR=$(dirname "$THIS_DIR")
-echo "$ROOT_DIR"
-WORKSPACE_DIR="$(dirname "$ROOT_DIR")"
-echo "$WORKSPACE_DIR"
-APP=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").name")
-VERSION=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").version")
-cd "$REPO_ROOT"
+WORKSPACE_DIR="/home/runner/work/passwise"
+REPO_ROOT="/home/runner/work/passwise/passwise"
+APP=$(node -p -e "require(\"$REPO_ROOT/package.json\").name")
+VERSION=$(node -p -e "require(\"$REPO_ROOT/package.json\").version")
 GIT_TAG=git tag --points-at
 GIT_BRANCH=git branch --show-current
-cd ~-
 PROD_REGEX="^prod-v"
 TEST_REGEX="^test-|-test$"
 if [[ "$GIT_TAG" =~ $PROD_REGEX ]]; then

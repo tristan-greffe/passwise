@@ -14,7 +14,7 @@ ENV NODE_APP_INSTANCE=$FLAVOR
 COPY . /opt/passwise
 
 # Setup app
-WORKDIR /opt/passwise/
+WORKDIR /opt/passwise/passwise
 RUN yarn && cd api && yarn && cd .. && yarn build
 
 
@@ -31,7 +31,7 @@ ARG FLAVOR
 
 ENV NODE_APP_INSTANCE=$FLAVOR
 
-COPY --from=Builder --chown=node:node /opt/passwise /opt/passwise
+COPY --from=Builder --chown=node:node /opt/passwise/passwise /opt/passwise
 # Switch to the node user.
 USER node
 
