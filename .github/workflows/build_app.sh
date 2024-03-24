@@ -49,7 +49,8 @@ echo "::endgroup::"
 echo "::group::Setting up workspace ..."
 
 ls 
-
+cd .. && ls 
+cd .. && ls 
 THIS_FILE=$(readlink -f "${BASH_SOURCE[0]}")
 echo "$THIS_FILE"
 THIS_DIR=$(dirname "$THIS_FILE")
