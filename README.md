@@ -74,17 +74,7 @@ yarn dev
 ```bash
 // Retrieve the latest available dev tag
 docker pull codask/passwise:dev
-
-// Run the MongoDB and passwise containers
-docker-compose up -d
-
-// Stop the MongoDB and passwise containers
-docker-compose down
-
-// Stop the MongoDB and passwise containers erasing DB data
-docker-compose down -v
 ```
-https://github.com/tristan-greffe/passwise/blob/cca6be3bf61442381f9ea5f9f22422b682bee952/readme_assets/docker-compose.yml#L1-L26
 
 > [!NOTE]
 > Then point your browser to localhost:8081
