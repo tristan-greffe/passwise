@@ -74,7 +74,7 @@ IMAGE_TAG="$VERSION-$APP_FLAVOR"
 
 echo "::group::Building container ..."
 
-docker login --username "$DOCKER_USER" --password-stdin < "$DOCKER_PASSWORD"
+docker login -u="$DOCKER_USER" -p="$DOCKER_PASSWORD"
 # DOCKER_BUILDKIT is here to be able to use Dockerfile specific dockerginore (app.Dockerfile.dockerignore)
 DOCKER_BUILDKIT=1 docker build \
   --build-arg APP="$APP" \
