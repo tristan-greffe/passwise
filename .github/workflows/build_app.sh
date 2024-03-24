@@ -48,10 +48,16 @@ echo "::endgroup::"
 
 echo "::group::Setting up workspace ..."
 
+ls 
+
 THIS_FILE=$(readlink -f "${BASH_SOURCE[0]}")
+echo "$THIS_FILE"
 THIS_DIR=$(dirname "$THIS_FILE")
+echo "$THIS_DIR"
 ROOT_DIR=$(dirname "$THIS_DIR")
+echo "$ROOT_DIR"
 WORKSPACE_DIR="$(dirname "$ROOT_DIR")"
+echo "$WORKSPACE_DIR"
 APP=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").name")
 VERSION=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").version")
 cd "$REPO_ROOT"
