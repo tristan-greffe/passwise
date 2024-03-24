@@ -52,8 +52,8 @@ THIS_FILE=$(readlink -f "${BASH_SOURCE[0]}")
 THIS_DIR=$(dirname "$THIS_FILE")
 ROOT_DIR=$(dirname "$THIS_DIR")
 WORKSPACE_DIR="$(dirname "$ROOT_DIR")"
-APP=$(node -p -e "require(\"$REPO_ROOT/package.json\").name")
-VERSION=$(node -p -e "require(\"$REPO_ROOT/package.json\").version")
+APP=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").name")
+VERSION=$(node -p -e "require(\"$WORKSPACE_DIR/passwise/package.json\").version")
 cd "$REPO_ROOT"
 GIT_TAG=git tag --points-at
 GIT_BRANCH=git branch --show-current
