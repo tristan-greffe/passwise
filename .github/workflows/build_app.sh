@@ -85,7 +85,7 @@ DOCKER_BUILDKIT=1 docker build \
 docker tag "$IMAGE_NAME:$IMAGE_TAG" "$IMAGE_NAME:$APP_FLAVOR"
 
 docker push "$IMAGE_NAME:$IMAGE_TAG"
-docker push "$IMAGE_NAME:$FLAVOR"
+docker push "$IMAGE_NAME:$APP_FLAVOR"
 
 docker logout
 
